@@ -29,13 +29,13 @@ export default function (imageBaseUrl) {
             },
             rotationAngle: 0,
             scale: 140,
-            focalX: `{{focal_x}}`,
-            focalY: `{{focal_y}}`,
+            focalX: 51.403743315508024,
+            focalY: 50.84033613445378,
             isFill: false,
             resource: {
               type: 'image',
               mimeType: 'image/jpeg',
-              src: `{{background.file}}`,
+              src: `${imageBaseUrl}/images/templates/travel/travel_page1_bg.jpg`,
               width: 220,
               height: 147,
               poster: '',
@@ -97,7 +97,7 @@ export default function (imageBaseUrl) {
             isFill: false,
             id: 'd5ca2488-668b-4e21-a7d8-05c17084742b',
             content:
-              '<span style="color: rgba(255, 255, 255, 1)">{{title}}</span>',
+              '<span style="color: rgba(255, 255, 255, 1)">EXPERIENCE</span>',
           },
           {
             font: {
@@ -137,7 +137,7 @@ export default function (imageBaseUrl) {
             isFill: false,
             id: '3c00f665-e2ff-4393-aef4-6ca790f599fd',
             content:
-              '<span style="font-weight: 500; color: #fff">{{headline}}</span>',
+              '<span style="font-weight: 500; color: #fff">THAILAND</span>',
           },
           {
             type: 'shape',
@@ -210,7 +210,6 @@ export default function (imageBaseUrl) {
         id: 'fca5c47a-e26f-4feb-b2a3-f6d8b6c68996',
         backgroundElementId: 'ca140433-52d1-4423-896f-2e5c856cb22f',
         backgroundOverlay: 'none',
-        layout: 'COVER',
       },
       {
         elements: [
@@ -306,7 +305,7 @@ export default function (imageBaseUrl) {
             isFill: false,
             id: 'bfd53cf2-f8e8-41f0-8449-48772b5194bb',
             content:
-              '<span style="color: rgba(255, 255, 255, 1)"><span style="font-weight: 500">{{title}}"</span></span>',
+              '<span style="color: rgba(255, 255, 255, 1)"><span style="font-weight: 500">YOUR BODY IS\nNOT A TEMPLE,\nIT\'S AN\nAMUSEMENT\nPARK."</span></span>',
           },
           {
             font: {
@@ -386,7 +385,7 @@ export default function (imageBaseUrl) {
             isFill: false,
             id: '88df74ed-7334-4e91-957c-c48b8da344e4',
             content:
-              '<span style="color: rgba(255, 255, 255, 1)">– {{headline}}</span>',
+              '<span style="color: rgba(255, 255, 255, 1)">– Anthony Bordain</span>',
           },
           {
             type: 'image',
@@ -418,7 +417,7 @@ export default function (imageBaseUrl) {
             resource: {
               type: 'image',
               mimeType: 'image/jpeg',
-              src: `{{background.file}}`,
+              src: `${imageBaseUrl}/images/templates/travel/travel_page2_image1.jpg`,
               width: 220,
               height: 331,
               poster: '',
@@ -435,7 +434,6 @@ export default function (imageBaseUrl) {
         backgroundOverlay: 'none',
         type: 'page',
         id: '3cdf0fde-f515-477d-8688-472c4cc5a8b3',
-        layout: 'QUOTE',
       },
       {
         elements: [
@@ -1256,7 +1254,7 @@ export default function (imageBaseUrl) {
             resource: {
               type: 'image',
               mimeType: 'image/jpeg',
-              src: `{{background.file}}`,
+              src: `${imageBaseUrl}/images/templates/travel/travel_page6_bg.jpg`,
               width: 220,
               height: 124,
               poster: '',
@@ -1318,7 +1316,7 @@ export default function (imageBaseUrl) {
             isFill: false,
             id: 'c40c8eae-e683-4fa6-a632-e1d652279a37',
             content:
-              '<span style="color: rgba(255, 255, 255, 1)">{{headline}}</span>',
+              '<span style="color: rgba(255, 255, 255, 1)">TOP 5\nCHIANG MAI</span>',
           },
           {
             font: {
@@ -1358,7 +1356,7 @@ export default function (imageBaseUrl) {
             isFill: false,
             id: 'ca20176a-3245-4735-9b1c-66017aa9e528',
             content:
-              '<span style="color: rgba(255, 255, 255, 1)">{{title}}</span>',
+              '<span style="color: rgba(255, 255, 255, 1)">If you only have one day to see as many sights as you can, we’ve compiled a list of walkable must-see destinations.</span>',
           },
           {
             type: 'shape',
