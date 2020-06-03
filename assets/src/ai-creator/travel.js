@@ -29,13 +29,13 @@ export default function (imageBaseUrl) {
             },
             rotationAngle: 0,
             scale: 140,
-            focalX: 51.403743315508024,
-            focalY: 50.84033613445378,
+            focalX: `{{focal_x}}`,
+            focalY: `{{focal_y}}`,
             isFill: false,
             resource: {
               type: 'image',
               mimeType: 'image/jpeg',
-              src: `${imageBaseUrl}/images/templates/travel/travel_page1_bg.jpg`,
+              src: `{{background.file}}`,
               width: 220,
               height: 147,
               poster: '',
@@ -97,7 +97,7 @@ export default function (imageBaseUrl) {
             isFill: false,
             id: 'd5ca2488-668b-4e21-a7d8-05c17084742b',
             content:
-              '<span style="color: rgba(255, 255, 255, 1)">EXPERIENCE</span>',
+              '<span style="color: rgba(255, 255, 255, 1)">{{title}}</span>',
           },
           {
             font: {
@@ -137,7 +137,7 @@ export default function (imageBaseUrl) {
             isFill: false,
             id: '3c00f665-e2ff-4393-aef4-6ca790f599fd',
             content:
-              '<span style="font-weight: 500; color: #fff">THAILAND</span>',
+              '<span style="font-weight: 500; color: #fff">{{headline}}</span>',
           },
           {
             type: 'shape',
@@ -210,6 +210,7 @@ export default function (imageBaseUrl) {
         id: 'fca5c47a-e26f-4feb-b2a3-f6d8b6c68996',
         backgroundElementId: 'ca140433-52d1-4423-896f-2e5c856cb22f',
         backgroundOverlay: 'none',
+        layout: 'COVER',
       },
       {
         elements: [
@@ -305,7 +306,7 @@ export default function (imageBaseUrl) {
             isFill: false,
             id: 'bfd53cf2-f8e8-41f0-8449-48772b5194bb',
             content:
-              '<span style="color: rgba(255, 255, 255, 1)"><span style="font-weight: 500">YOUR BODY IS\nNOT A TEMPLE,\nIT\'S AN\nAMUSEMENT\nPARK."</span></span>',
+              '<span style="color: rgba(255, 255, 255, 1)"><span style="font-weight: 500">{{title}}"</span></span>',
           },
           {
             font: {
@@ -385,7 +386,7 @@ export default function (imageBaseUrl) {
             isFill: false,
             id: '88df74ed-7334-4e91-957c-c48b8da344e4',
             content:
-              '<span style="color: rgba(255, 255, 255, 1)">– Anthony Bordain</span>',
+              '<span style="color: rgba(255, 255, 255, 1)">– {{headline}}</span>',
           },
           {
             type: 'image',
@@ -417,7 +418,7 @@ export default function (imageBaseUrl) {
             resource: {
               type: 'image',
               mimeType: 'image/jpeg',
-              src: `${imageBaseUrl}/images/templates/travel/travel_page2_image1.jpg`,
+              src: `{{background.file}}`,
               width: 220,
               height: 331,
               poster: '',
@@ -434,6 +435,7 @@ export default function (imageBaseUrl) {
         backgroundOverlay: 'none',
         type: 'page',
         id: '3cdf0fde-f515-477d-8688-472c4cc5a8b3',
+        layout: 'QUOTE',
       },
       {
         elements: [
@@ -568,8 +570,7 @@ export default function (imageBaseUrl) {
             focalY: 50,
             isFill: false,
             id: '883808f1-b87b-4b35-b0f1-0945e0faef2e',
-            content:
-              '<span style="color: rgba(9, 66, 40, 1)">The cheapest and most authentic way to experience Thai life. Prepare yourself, some like it hot!</span>',
+            content: '<span style="color: rgba(9, 66, 40, 1)">{{title}}</span>',
           },
           {
             font: {
@@ -609,7 +610,7 @@ export default function (imageBaseUrl) {
             isFill: false,
             id: '6258d646-a291-498f-81ab-3095f352bb26',
             content:
-              '<span style="color: rgba(9, 66, 40, 1)">STREET\nFOOD</span>',
+              '<span style="color: rgba(9, 66, 40, 1)">{{headline}}</span>',
           },
           {
             type: 'image',
@@ -632,8 +633,8 @@ export default function (imageBaseUrl) {
             width: 314,
             height: 347,
             scale: 100,
-            focalX: 49.81801455703381,
-            focalY: 44.55730329866608,
+            focalX: '{{focal_x}}',
+            focalY: '{{focal_y}}',
             mask: {
               type: 'rectangle',
             },
@@ -641,7 +642,7 @@ export default function (imageBaseUrl) {
             resource: {
               type: 'image',
               mimeType: 'image/jpeg',
-              src: `${imageBaseUrl}/images/templates/travel/travel_page3_image1.jpg`,
+              src: `{{background.file}}`,
               width: 220,
               height: 275,
               poster: '',
@@ -658,6 +659,7 @@ export default function (imageBaseUrl) {
         backgroundOverlay: 'none',
         type: 'page',
         id: '80b4f7b3-c54a-4e40-9a75-c937cedfed4b',
+        layout: 'FOCUS',
       },
       {
         elements: [
@@ -1248,13 +1250,13 @@ export default function (imageBaseUrl) {
             },
             rotationAngle: 0,
             scale: 130,
-            focalX: 29.870129870129876,
-            focalY: 50,
+            focalX: '{{focal_x}}',
+            focalY: '{{focal_y}}',
             isFill: false,
             resource: {
               type: 'image',
               mimeType: 'image/jpeg',
-              src: `${imageBaseUrl}/images/templates/travel/travel_page6_bg.jpg`,
+              src: `{{background.file}}`,
               width: 220,
               height: 124,
               poster: '',
@@ -1316,7 +1318,7 @@ export default function (imageBaseUrl) {
             isFill: false,
             id: 'c40c8eae-e683-4fa6-a632-e1d652279a37',
             content:
-              '<span style="color: rgba(255, 255, 255, 1)">TOP 5\nCHIANG MAI</span>',
+              '<span style="color: rgba(255, 255, 255, 1)">{{headline}}</span>',
           },
           {
             font: {
@@ -1356,7 +1358,7 @@ export default function (imageBaseUrl) {
             isFill: false,
             id: 'ca20176a-3245-4735-9b1c-66017aa9e528',
             content:
-              '<span style="color: rgba(255, 255, 255, 1)">If you only have one day to see as many sights as you can, we’ve compiled a list of walkable must-see destinations.</span>',
+              '<span style="color: rgba(255, 255, 255, 1)">{{title}}</span>',
           },
           {
             type: 'shape',
@@ -1457,6 +1459,7 @@ export default function (imageBaseUrl) {
         backgroundOverlay: 'none',
         type: 'page',
         id: 'c2d56aca-cb1a-41eb-bbdc-41dc2c4f597c',
+        layout: 'NORAMAL',
       },
       {
         elements: [
@@ -1593,7 +1596,7 @@ export default function (imageBaseUrl) {
             x: 45,
             y: 440,
             content:
-              '<span style="color: rgba(9, 66, 40, 1)">TEMPLE\nNAME</span>',
+              '<span style="color: rgba(9, 66, 40, 1)">{{headline}}</span>',
           },
           {
             font: {
@@ -1633,8 +1636,7 @@ export default function (imageBaseUrl) {
             id: 'bc7d8800-b421-4a19-9db0-f594e9b0bd8d',
             x: 45,
             y: 545,
-            content:
-              '<span style="color: rgba(9, 66, 40, 1)">The courtyard around the 3 Kings Monument is the best place to give early morning Alms to the Monks in Central Chiang Mai.</span>',
+            content: '<span style="color: rgba(9, 66, 40, 1)">{{title}}</span>',
           },
           {
             type: 'image',
@@ -1657,8 +1659,8 @@ export default function (imageBaseUrl) {
             width: 307,
             height: 392,
             scale: 100,
-            focalX: 50.000000000000014,
-            focalY: 57.36776812717045,
+            focalX: '{{focal_x}}',
+            focalY: '{{focal_y}}',
             mask: {
               type: 'rectangle',
             },
@@ -1666,7 +1668,7 @@ export default function (imageBaseUrl) {
             resource: {
               type: 'image',
               mimeType: 'image/jpeg',
-              src: `${imageBaseUrl}/images/templates/travel/travel_page7_image1.jpg`,
+              src: `{{background.file}}`,
               width: 220,
               height: 330,
               poster: '',
@@ -1683,6 +1685,7 @@ export default function (imageBaseUrl) {
         backgroundOverlay: 'none',
         type: 'page',
         id: '7b7d7662-fb1f-46b5-94e0-b01029a666a5',
+        layout: 'SPLIT',
       },
       {
         elements: [
