@@ -21,6 +21,9 @@
  * External dependencies
  */
 import program from 'commander';
+import jsdomGlobal from 'jsdom-global';
+
+jsdomGlobal();
 
 async function tryImport(dir) {
   const path = `${dir}/main.cjs`;

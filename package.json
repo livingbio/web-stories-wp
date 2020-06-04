@@ -128,6 +128,8 @@
     "jest-matcher-deep-close-to": "^2.0.1",
     "jest-puppeteer": "^4.4.0",
     "jest-silent-reporter": "^0.2.1",
+    "jsdom": "^16.2.2",
+    "jsdom-global": "^3.0.2",
     "jsdom-screenshot": "^3.2.0",
     "karma": "^5.0.9",
     "karma-chrome-launcher": "^3.1.0",
