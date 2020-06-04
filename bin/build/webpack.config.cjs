@@ -60,6 +60,14 @@ module.exports = {
           },
         ],
       },
+      {
+        test: /\.svg$/,
+        use: ['@svgr/webpack', 'url-loader'],
+      },
+      {
+        test: /\.css$/,
+        use: ['css-loader'],
+      },
     ].filter(Boolean),
   },
   plugins: [new webpack.EnvironmentPlugin({ DISABLE_PREVENT: false })],

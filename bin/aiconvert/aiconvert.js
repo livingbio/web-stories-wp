@@ -14,5 +14,4 @@
  * limitations under the License.
  */
 
-export { default as getStoryMarkup } from '../../assets/src/edit-story/output/utils/getStoryMarkup';
-export { aiconvert } from './aiconvert';
+export function aiconvert() {}
