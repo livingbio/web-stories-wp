@@ -3,3 +3,4 @@
 **/assets/js/*.js
 build/*
 !.storybook
+bin/build/*/**
