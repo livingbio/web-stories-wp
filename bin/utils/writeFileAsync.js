@@ -14,5 +14,13 @@
  * limitations under the License.
  */
 
-export { aiconvert, getStoryJson, getAiStoryMarkup } from './aiconvert';
-export { storyconvert, getStoryMarkup } from './storyconvert';
+/**
+ * External dependencies
+ */
+import fs from 'fs';
+
+export function writeFileAsync(path, data, options) {
+  return new Promise((resolve) => {
+    fs.writeFile(path, data, options, resolve);
+  });
+}

@@ -14,5 +14,24 @@
  * limitations under the License.
  */
 
-export { aiconvert, getStoryJson, getAiStoryMarkup } from './aiconvert';
-export { storyconvert, getStoryMarkup } from './storyconvert';
+/**
+ * External dependencies
+ */
+import fs from 'fs';
+
+/**
+ * Internal dependencies
+ */
+import _getStoryMarkup from '../../assets/src/edit-story/output/utils/getStoryMarkup';
+
+export function getStoryMarkup({ story, pages, metadata }) {
+  return _getStoryMarkup(story, pages, metadata);
+}
+
+export function storyconvert(input, html) {
+  const content = fs.readFileSync(input, 'utf-8');
+  const storyJson = JSON.parse(content);
+
+  const htmlContent = getStoryMarkup(storyJson);
+  fs.writeFileSync(html, htmlContent);
+}

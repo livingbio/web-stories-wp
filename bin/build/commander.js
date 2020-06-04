@@ -42,13 +42,21 @@ async function tryImport(dir) {
 }
 
 (async function () {
-  const { aiconvert } = await tryImport('./aiconvert');
+  const { aiconvert, storyconvert } = await tryImport('./aiconvert');
 
   program
     .command('aiconvert')
-    .description('Convert AI generated story to story template and story html')
-    .arguments('<input> <output1> [output2]')
+    .description(
+      "Convert GliaStudio's AI generated story to web-story json and story markup"
+    )
+    .arguments('<inputJson> <outputJson> [outputHtml]')
     .action(aiconvert);
+
+  program
+    .command('storyconvert')
+    .description('Convert web-story json to story markup')
+    .arguments('<inputJSON> <outputHtml>')
+    .action(storyconvert);
 
   program.parse(process.argv);
 })();
