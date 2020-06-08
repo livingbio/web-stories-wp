@@ -47,7 +47,7 @@ export default function generateTemplate() {
             focalY: '{{focal_y / background.height * 100}}',
             resource: {
               type: '{{background.type}}',
-              mimeType: '{{background.type}}',
+              mimeType: '{{background.mime}}',
               src: '{{background.file}}',
               width: '{{background.width}}',
               height: '{{background.height}}',
