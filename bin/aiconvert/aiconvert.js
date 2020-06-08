@@ -19,6 +19,7 @@
  */
 import fs from 'fs';
 import ST from 'stjs';
+import { v4 as uuidv4 } from 'uuid';
 
 /**
  * Internal dependencies
@@ -84,7 +85,14 @@ export function getStoryJson(data, template) {
         throw error;
       }
       const templatePage = templatePages[layoutPageIndex];
-      return ST.select(templatePage).transform(page).root();
+
+      page = ST.select(templatePage).transform(page).root();
+      page.id = uuidv4();
+      for (const element of page.elements) {
+        element.id = uuidv4();
+      }
+
+      return page;
     }),
   };
 }
@@ -102,7 +110,7 @@ export function aiconvert(input, template, json, html) {
   const templateJson = JSON.parse(templateContent);
   const storyJson = getStoryJson(inputJson, templateJson);
 
-  const writeJson = writeFileAsync(json, JSON.stringify(storyJson));
+  const writeJson = writeFileAsync(json, JSON.stringify(storyJson, null, 2));
 
   if (html) {
     const htmlContent = getStoryMarkup(storyJson);
