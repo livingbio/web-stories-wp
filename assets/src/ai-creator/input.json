@@ -9,6 +9,7 @@
                 "background": {
                     "id": 80,
                     "type": "image",
+                    "mime": "image/png",
                     "license": "User",
                     "file": "https://storage.googleapis.com/livingbio-tmp/94dfd6a297c42b43c595a841f7feea2c263c60e8.png",
                     "title": "",
@@ -35,6 +36,7 @@
                 "background": {
                     "id": 78,
                     "type": "image",
+                    "mime": "image/png",
                     "license": "User",
                     "file": "https://storage.googleapis.com/livingbio-tmp/94dfd6a297c42b43c595a841f7feea2c263c60e8.png",
                     "title": "",
@@ -61,6 +63,7 @@
                 "background": {
                     "id": 79,
                     "type": "image",
+                    "mime": "image/jpeg",
                     "license": "User",
                     "file": "https://storage.googleapis.com/livingbio-tmp/3a52a8a6f8c181154143453495091d397fa4aa8c.jpeg",
                     "title": "",
@@ -87,6 +90,7 @@
                 "background": {
                     "id": 81,
                     "type": "video",
+                    "mime": "video/mp4",
                     "license": "Creative Common",
                     "file": "https://storage.googleapis.com/livingbio-tmp/ec1a2a57540c821d332aece17cc27bba75783f82.mp4",
                     "title": "",
@@ -113,6 +117,7 @@
                 "background": {
                     "id": 79,
                     "type": "image",
+                    "mime": "image/jpeg",
                     "license": "User",
                     "file": "https://storage.googleapis.com/livingbio-tmp/3a52a8a6f8c181154143453495091d397fa4aa8c.jpeg",
                     "title": "",
@@ -139,6 +144,7 @@
                 "background": {
                     "id": 79,
                     "type": "image",
+                    "mime": "image/jpeg",
                     "license": "User",
                     "file": "https://storage.googleapis.com/livingbio-tmp/3a52a8a6f8c181154143453495091d397fa4aa8c.jpeg",
                     "title": "",
