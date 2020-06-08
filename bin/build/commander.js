@@ -47,15 +47,15 @@ async function tryImport(dir) {
   program
     .command('aiconvert')
     .description(
-      "Convert GliaStudio's AI generated story to web-story json and story markup"
+      "Convert GliaStudio's AI generated story to web-story JSON and story markup"
     )
-    .arguments('<inputJson> <outputJson> [outputHtml]')
+    .arguments('<inputJSON> <templateJSON> <outputJSON> [outputHTML]')
     .action(aiconvert);
 
   program
     .command('storyconvert')
-    .description('Convert web-story json to story markup')
-    .arguments('<inputJSON> <outputHtml>')
+    .description('Convert web-story JSON to story markup')
+    .arguments('<inputJSON> <outputHTML>')
     .action(storyconvert);
 
   program.parse(process.argv);
