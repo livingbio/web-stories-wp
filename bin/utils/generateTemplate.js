@@ -19,7 +19,7 @@
  */
 import readline from 'readline';
 
-export default function generateTemplate(backgroundId) {
+export default function generateTemplate() {
   const lines = [];
 
   const rl = readline.createInterface({
@@ -39,7 +39,7 @@ export default function generateTemplate(backgroundId) {
     const { pages } = JSON.parse(lines.join(''));
     for (const page of pages) {
       for (const element of page.elements) {
-        if (element.resource?.id === parseInt(backgroundId)) {
+        if (element.isBackground) {
           Object.assign(element, {
             type: '{{background.type}}',
             scale: '{{background.scale * 100}}',
@@ -56,8 +56,11 @@ export default function generateTemplate(backgroundId) {
               title: '{{background.title}}',
               alt: '{{background.description}}',
               local: false,
-              sizes: {},
+              sizes: "{{background.type === 'video' ? [] : {} }}",
             },
+            loop: element.loop ?? false,
+            autoPlay: element.autoPlay ?? true,
+            controls: element.controls ?? false,
           });
         }
       }

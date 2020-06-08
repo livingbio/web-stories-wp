@@ -149,10 +149,7 @@ program
 
 program
   .command('generate-template')
-  .description(
-    'Pasting story with resource id as background to stdin and generate template to stdout'
-  )
-  .arguments('<backgroundId>')
+  .description('Pasting story to stdin and generate template to stdout')
   .action(generateTemplate);
 
 program.parse(process.argv);
