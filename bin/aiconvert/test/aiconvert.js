@@ -17,6 +17,7 @@
 /**
  * External dependencies
  */
+import fs from 'fs';
 import { JSDOM } from 'jsdom';
 
 /**
@@ -34,6 +35,8 @@ describe('getAiStoryMarkup', () => {
     const dom = new JSDOM(markup);
     const ampStory = dom.window.document.querySelector('amp-story');
     expect(ampStory).toBeVisible();
+
+    fs.writeFileSync('output.html', markup);
   });
 });
 
