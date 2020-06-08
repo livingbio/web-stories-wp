@@ -43,8 +43,8 @@ export default function generateTemplate(backgroundId) {
           Object.assign(element, {
             type: '{{background.type}}',
             scale: '{{background.scale * 100}}',
-            focalX: '{{focal_x}}',
-            focalY: '{{focal_y}}',
+            focalX: '{{focal_x / background.width * 100}}',
+            focalY: '{{focal_y / background.height * 100}}',
             resource: {
               type: '{{background.type}}',
               mimeType: '{{background.type}}',
