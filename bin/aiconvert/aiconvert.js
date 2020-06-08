@@ -18,6 +18,7 @@
  * External dependencies
  */
 import fs from 'fs';
+import ST from 'stjs';
 
 /**
  * Internal dependencies
@@ -25,24 +26,81 @@ import fs from 'fs';
 import { writeFileAsync } from '../utils/writeFileAsync';
 import { getStoryMarkup } from './storyconvert';
 
-export function getStoryJson(aiStory) {
-  // TODO
+export function getStoryJson(data, template) {
+  const { pages, ...dataOptions } = data;
+  const { pages: templatePages, layouts = {}, ...options } = template;
+
+  for (const [key, value] of Object.entries(dataOptions)) {
+    options[key] = options[key] ?? value;
+  }
+
+  const {
+    featuredMediaUrl,
+    link,
+    title,
+    autoAdvance,
+    defaultPageDuratio,
+    publisherName = '',
+    logoPlaceholder,
+  } = options;
+
   return {
-    story: {},
-    pages: aiStory.pages,
-    metadata: {},
+    story: {
+      featuredMediaUrl,
+      link,
+      title,
+      autoAdvance,
+      defaultPageDuratio,
+
+      // default values to prevent OutputStory complaining
+      status: '',
+      author: -1,
+      slug: '',
+      date: '',
+      modified: '',
+      excerpt: '',
+      featuredMedia: -1,
+      password: '',
+    },
+    metadata: {
+      publisher: {
+        name: publisherName,
+      },
+      logoPlaceholder,
+
+      // default value to prevent OutputStory complaining
+      fallbackPoster: '',
+    },
+    pages: pages.map((page, pageIndex) => {
+      const layoutPageIndex = layouts[page.layout];
+      if (layoutPageIndex == null) {
+        const error = new Error(
+          `Layout "${
+            page.layout
+          }" not found in \`template.layout\`: ${JSON.stringify(layouts)}`
+        );
+        error.info = { data, page, pageIndex, template };
+        error.name = 'LayoutNotExistsError';
+        throw error;
+      }
+      const templatePage = templatePages[layoutPageIndex];
+      return ST.select(templatePage).transform(page).root();
+    }),
   };
 }
 
-export function getAiStoryMarkup(aiStory) {
-  const story = getStoryJson(aiStory);
+export function getAiStoryMarkup(aiStory, template) {
+  const story = getStoryJson(aiStory, template);
   return getStoryMarkup(story);
 }
 
-export function aiconvert(input, json, html) {
+export function aiconvert(input, template, json, html) {
   const content = fs.readFileSync(input, 'utf-8');
-  const aiStory = JSON.parse(content);
-  const storyJson = getStoryJson(aiStory);
+  const inputJson = JSON.parse(content);
+
+  const templateContent = fs.readFileSync(template, 'utf-8');
+  const templateJson = JSON.parse(templateContent);
+  const storyJson = getStoryJson(inputJson, templateJson);
 
   const writeJson = writeFileAsync(json, JSON.stringify(storyJson));
 

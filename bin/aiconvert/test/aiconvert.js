@@ -17,22 +17,77 @@
 /**
  * External dependencies
  */
-import path from 'path';
 import fs from 'fs';
+import { JSDOM } from 'jsdom';
 
 /**
  * Internal dependencies
  */
-import { getAiStoryMarkup } from '../aiconvert';
+import { getAiStoryMarkup, getStoryJson } from '../aiconvert';
+import defaultAiStory from './_utils/aiStory';
+import defaultTemplate from './_utils/template';
 
 describe('getAiStoryMarkup', () => {
-  it('returns markup', () => {
-    const inputPath = path.resolve(__dirname, 'data', 'aiStory.json');
-    const content = fs.readFileSync(inputPath, 'utf-8');
-    const aiStory = JSON.parse(content);
+  it('returns string of AMP HTML', () => {
+    const markup = getAiStoryMarkup(defaultAiStory, defaultTemplate);
+    expect(markup).toBeString();
 
-    const markup = getAiStoryMarkup(aiStory);
+    const dom = new JSDOM(markup);
+    const ampStory = dom.window.document.querySelector('amp-story');
+    expect(ampStory).toBeVisible();
 
-    expect(markup).toMatchSnapshot();
+    fs.writeFileSync('output.html', markup);
+  });
+});
+
+describe('getStoryJson', () => {
+  let template, data;
+
+  beforeAll(() => {
+    template = {
+      layouts: {
+        NORMAL: 0,
+      },
+      pages: [
+        {
+          elements: [
+            {
+              text: '{{ headline }}',
+            },
+            {
+              text: '{{ title }}',
+            },
+          ],
+        },
+      ],
+    };
+
+    data = {
+      pages: [
+        {
+          headline: 'My Headline',
+          title: 'My Title',
+          layout: 'NORMAL',
+        },
+      ],
+    };
+  });
+
+  it('renders template layouts correctly', () => {
+    const storyJson = getStoryJson(data, template);
+    expect(storyJson.story).toBeObject();
+    expect(storyJson.metadata.publisher).toBeObject();
+    expect(storyJson.pages).toStrictEqual([
+      {
+        elements: [
+          {
+            text: 'My Headline',
+          },
+          {
+            text: 'My Title',
+          },
+        ],
+      },
+    ]);
   });
 });
