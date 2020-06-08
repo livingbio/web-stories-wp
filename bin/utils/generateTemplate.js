@@ -41,6 +41,7 @@ export default function generateTemplate(backgroundId) {
       for (const element of page.elements) {
         if (element.resource?.id === parseInt(backgroundId)) {
           Object.assign(element, {
+            type: '{{background.type}}',
             scale: '{{background.scale * 100}}',
             focalX: '{{focal_x}}',
             focalY: '{{focal_y}}',
