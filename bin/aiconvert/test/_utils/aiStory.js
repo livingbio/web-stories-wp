@@ -105,7 +105,7 @@ export default {
       keywords: null,
       focal_x: 562,
       focal_y: 218,
-      layout: 'SPLIT',
+      layout: 'QUOTE',
     },
     {
       id: 102,
@@ -164,7 +164,7 @@ export default {
       keywords: null,
       focal_x: 562,
       focal_y: 218,
-      layout: 'SPLIT',
+      layout: 'QUOTE',
     },
     {
       id: 104,

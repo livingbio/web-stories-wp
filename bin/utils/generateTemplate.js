@@ -71,7 +71,7 @@ export default function generateTemplate() {
         COVER: 0,
         NORMAL: 1,
         FOCUS: 2,
-        SPLIT: 3,
+        QUOTE: 3,
       },
       pages,
     };
