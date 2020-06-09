@@ -33,6 +33,7 @@ import {
 } from '../../constants';
 import pointerEventsCss from '../../utils/pointerEventsCss';
 import useResizeEffect from '../../utils/useResizeEffect';
+import generatePatternStyles from '../../utils/generatePatternStyles';
 import useCanvas from './useCanvas';
 
 /**
@@ -115,6 +116,7 @@ const PageAreaFullbleedContainer = styled(Area).attrs({
 
 // Overflow is not hidden for media edit layer.
 const PageAreaWithOverflow = styled.div`
+  ${({ background }) => generatePatternStyles(background)}
   overflow: ${({ showOverflow }) => (showOverflow ? 'initial' : 'hidden')};
   position: relative;
   width: 100%;
@@ -177,9 +179,9 @@ const CarouselArea = styled(Area).attrs({
  * @param {!{current: ?Element}} containerRef
  */
 function useLayoutParams(containerRef) {
-  const {
-    actions: { setPageSize },
-  } = useCanvas();
+  const { setPageSize } = useCanvas((state) => ({
+    setPageSize: state.actions.setPageSize,
+  }));
 
   useResizeEffect(containerRef, ({ width, height }) => {
     // See Layer's `grid` CSS above. Per the layout, the maximum available
@@ -197,9 +199,9 @@ function useLayoutParams(containerRef) {
 }
 
 function useLayoutParamsCssVars() {
-  const {
-    state: { pageSize },
-  } = useCanvas();
+  const { pageSize } = useCanvas((state) => ({
+    pageSize: state.state.pageSize,
+  }));
   return {
     '--page-width-px': `${pageSize.width}px`,
     '--page-height-px': `${pageSize.height}px`,
@@ -217,12 +219,16 @@ const PageArea = forwardRef(
       fullbleedRef = createRef(),
       overlay = [],
       fullbleed = [],
+      background,
     },
     ref
   ) => {
     return (
       <PageAreaFullbleedContainer ref={fullbleedRef} data-testid="fullbleed">
-        <PageAreaWithOverflow showOverflow={showOverflow}>
+        <PageAreaWithOverflow
+          showOverflow={showOverflow}
+          background={background}
+        >
           <PageAreaSafeZone ref={ref} data-testid="safezone">
             {children}
           </PageAreaSafeZone>
