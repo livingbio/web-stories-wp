@@ -69,25 +69,24 @@ describe('getStoryJson', () => {
           title: 'My Title',
           layout: 'NORMAL',
         },
+        {
+          headline: 'My Headline',
+          title: 'My Title',
+          layout: 'NORMAL',
+        },
       ],
     };
   });
 
   it('renders template layouts correctly', () => {
-    const storyJson = getStoryJson(data, template);
-    expect(storyJson.story).toBeObject();
-    expect(storyJson.metadata.publisher).toBeObject();
-    expect(storyJson.pages).toStrictEqual([
-      {
-        elements: [
-          {
-            text: 'My Headline',
-          },
-          {
-            text: 'My Title',
-          },
-        ],
-      },
-    ]);
+    const { story, metadata, pages } = getStoryJson(data, template);
+    expect(story).toBeObject();
+    expect(metadata.publisher).toBeObject();
+
+    expect(pages[0].id).not.toStrictEqual(pages[1].id);
+
+    const { elements } = pages[0];
+    expect(elements[0].text).toBe('My Headline');
+    expect(elements[1].text).toBe('My Title');
   });
 });
