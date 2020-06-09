@@ -590,7 +590,7 @@
       }
     },
     {
-      "backgroundOverlay": "radial",
+      "backgroundOverlay": "solid",
       "elements": [
         {
           "opacity": 100,
