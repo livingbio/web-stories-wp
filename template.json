@@ -2,8 +2,8 @@
   "layouts": {
     "COVER": 0,
     "NORMAL": 1,
-    "FOCUS": 2,
-    "QUOTE": 3
+    "FOCUS": 3,
+    "QUOTE": 2
   },
   "pages": [
     {
