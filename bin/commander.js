@@ -32,6 +32,7 @@ import {
   getCurrentVersionNumber,
   updateVersionNumbers,
   updateAssetsURL,
+  generateTemplate,
 } from './utils/index.js';
 
 const PLUGIN_DIR = process.cwd();
@@ -145,6 +146,11 @@ program
 
     console.log('Web fonts updated!');
   });
+
+program
+  .command('generate-template')
+  .description('Pasting story to stdin and generate template to stdout')
+  .action(generateTemplate);
 
 program.parse(process.argv);
 

@@ -14,9 +14,5 @@
  * limitations under the License.
  */
 
-export { default as bundlePlugin } from './bundlePlugin.js';
-export { default as buildFonts } from './buildFonts.js';
-export { default as getCurrentVersionNumber } from './getCurrentVersionNumber.js';
-export { default as updateAssetsURL } from './updateAssetsURL.js';
-export { default as updateVersionNumbers } from './updateVersionNumbers.js';
-export { default as generateTemplate } from './generateTemplate.js';
+export { aiconvert, getStoryJson, getAiStoryMarkup } from './aiconvert';
+export { storyconvert, getStoryMarkup } from './storyconvert';

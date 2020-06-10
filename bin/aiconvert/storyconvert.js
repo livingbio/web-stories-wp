@@ -14,9 +14,24 @@
  * limitations under the License.
  */
 
-export { default as bundlePlugin } from './bundlePlugin.js';
-export { default as buildFonts } from './buildFonts.js';
-export { default as getCurrentVersionNumber } from './getCurrentVersionNumber.js';
-export { default as updateAssetsURL } from './updateAssetsURL.js';
-export { default as updateVersionNumbers } from './updateVersionNumbers.js';
-export { default as generateTemplate } from './generateTemplate.js';
+/**
+ * External dependencies
+ */
+import fs from 'fs';
+
+/**
+ * Internal dependencies
+ */
+import _getStoryMarkup from '../../assets/src/edit-story/output/utils/getStoryMarkup';
+
+export function getStoryMarkup({ story, pages, metadata }) {
+  return _getStoryMarkup(story, pages, metadata);
+}
+
+export function storyconvert(input, html) {
+  const content = fs.readFileSync(input, 'utf-8');
+  const storyJson = JSON.parse(content);
+
+  const htmlContent = getStoryMarkup(storyJson);
+  fs.writeFileSync(html, htmlContent);
+}

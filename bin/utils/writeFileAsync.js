@@ -14,9 +14,13 @@
  * limitations under the License.
  */
 
-export { default as bundlePlugin } from './bundlePlugin.js';
-export { default as buildFonts } from './buildFonts.js';
-export { default as getCurrentVersionNumber } from './getCurrentVersionNumber.js';
-export { default as updateAssetsURL } from './updateAssetsURL.js';
-export { default as updateVersionNumbers } from './updateVersionNumbers.js';
-export { default as generateTemplate } from './generateTemplate.js';
+/**
+ * External dependencies
+ */
+import fs from 'fs';
+
+export function writeFileAsync(path, data, options) {
+  return new Promise((resolve) => {
+    fs.writeFile(path, data, options, resolve);
+  });
+}
