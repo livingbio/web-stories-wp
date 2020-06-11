@@ -23,7 +23,7 @@ const MIGRATIONS = {
   1: [backgroundConditionClause],
 };
 
-export const DATA_VERSION = Math.max.apply(
+export const TEMPLATE_VERSION = Math.max.apply(
   null,
   Object.keys(MIGRATIONS).map(Number)
 );
@@ -31,7 +31,7 @@ export const DATA_VERSION = Math.max.apply(
 export function migrate(slottedTemplate) {
   const version = slottedTemplate.templateVersion || 0;
   let result = slottedTemplate;
-  for (let v = version; v < DATA_VERSION; v++) {
+  for (let v = version; v < TEMPLATE_VERSION; v++) {
     const migrations = MIGRATIONS[v + 1];
     if (!migrations) {
       continue;

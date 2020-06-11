@@ -19,7 +19,12 @@
  */
 import readline from 'readline';
 
-const DATA_VERSION = 21;
+/**
+ * Internal dependencies
+ */
+import { TEMPLATE_VERSION } from './migration';
+
+const STORY_DATA_VERSION = 21;
 
 export default function generateTemplate() {
   const lines = [];
@@ -30,7 +35,7 @@ export default function generateTemplate() {
   });
 
   process.stderr.write(
-    `Please paste v${DATA_VERSION} story exported from editor:\n`
+    `Please paste v${STORY_DATA_VERSION} story exported from editor:\n`
   );
 
   rl.on('line', (line) => {
@@ -81,8 +86,8 @@ export default function generateTemplate() {
     }
 
     const template = {
-      version: DATA_VERSION,
-      templateVersion: 1,
+      version: STORY_DATA_VERSION,
+      templateVersion: TEMPLATE_VERSION,
       layouts: {
         COVER: 0,
         NORMAL: 1,
