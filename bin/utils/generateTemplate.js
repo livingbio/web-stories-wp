@@ -38,32 +38,40 @@ export default function generateTemplate() {
   rl.on('close', () => {
     const { pages } = JSON.parse(lines.join(''));
     for (const page of pages) {
-      for (const element of page.elements) {
-        if (element.isBackground) {
-          Object.assign(element, {
-            type: '{{background.type}}',
-            scale: '{{background.scale * 100}}',
-            focalX: '{{focal_x / background.width * 100}}',
-            focalY: '{{focal_y / background.height * 100}}',
-            resource: {
-              type: '{{background.type}}',
-              mimeType: '{{background.mime}}',
-              src: '{{background.file}}',
-              width: '{{background.width}}',
-              height: '{{background.height}}',
-              poster: '{{background.thumbnail}}',
-              length: '{{background.duration}}',
-              title: '{{background.title}}',
-              alt: '{{background.description}}',
-              local: false,
-              sizes: "{{background.type === 'video' ? [] : {} }}",
-            },
-            loop: element.loop ?? false,
-            autoPlay: element.autoPlay ?? true,
-            controls: element.controls ?? false,
-          });
+      page.elements.forEach((element, i) => {
+        if (!element.isBackground) {
+          return;
         }
-      }
+
+        Object.assign(element, {
+          type: '{{background.type}}',
+          scale: '{{background.scale * 100}}',
+          focalX: '{{focal_x / background.width * 100}}',
+          focalY: '{{focal_y / background.height * 100}}',
+          resource: {
+            type: '{{background.type}}',
+            mimeType: '{{background.mime}}',
+            src: '{{background.file}}',
+            width: '{{background.width}}',
+            height: '{{background.height}}',
+            poster: '{{background.thumbnail}}',
+            length: '{{background.duration}}',
+            title: '{{background.title}}',
+            alt: '{{background.description}}',
+            local: false,
+            sizes: "{{background.type === 'video' ? [] : {} }}",
+          },
+          loop: element.loop ?? false,
+          autoPlay: element.autoPlay ?? true,
+          controls: element.controls ?? false,
+        });
+
+        page.elements[i] = [
+          {
+            '{{#if background}}': element,
+          },
+        ];
+      });
     }
 
     const template = {
