@@ -14,4 +14,4 @@
  * limitations under the License.
  */
 
-export { TEMPLATE_VERSION, migrate } from './migrate';
+export { TEMPLATE_VERSION, migrate } from './migrate.js';

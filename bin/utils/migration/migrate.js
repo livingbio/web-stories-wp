@@ -17,7 +17,7 @@
 /**
  * Internal dependencies
  */
-import backgroundConditionClause from './migrations/v0001_backgroundConditionClause';
+import backgroundConditionClause from './migrations/v0001_backgroundConditionClause.js';
 
 const MIGRATIONS = {
   1: [backgroundConditionClause],
