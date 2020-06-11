@@ -25,11 +25,12 @@ import { v4 as uuidv4 } from 'uuid';
  * Internal dependencies
  */
 import { writeFileAsync } from '../utils/writeFileAsync';
+import { migrate } from '../utils/migration';
 import { getStoryMarkup } from './storyconvert';
 
 export function getStoryJson(data, template) {
   const { pages, ...dataOptions } = data;
-  const { pages: templatePages, layouts = {}, ...options } = template;
+  const { pages: templatePages, layouts = {}, ...options } = migrate(template);
 
   for (const [key, value] of Object.entries(dataOptions)) {
     options[key] = options[key] ?? value;

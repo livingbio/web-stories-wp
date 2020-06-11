@@ -75,6 +75,8 @@ export default function generateTemplate() {
     }
 
     const template = {
+      version: 21,
+      templateVersion: 1,
       layouts: {
         COVER: 0,
         NORMAL: 1,
@@ -82,7 +84,6 @@ export default function generateTemplate() {
         QUOTE: 3,
       },
       pages,
-      version: 21,
     };
 
     const output = JSON.stringify(template, null, 2);
