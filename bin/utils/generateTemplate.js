@@ -19,6 +19,8 @@
  */
 import readline from 'readline';
 
+const DATA_VERSION = 21;
+
 export default function generateTemplate() {
   const lines = [];
 
@@ -26,6 +28,10 @@ export default function generateTemplate() {
     input: process.stdin,
     output: process.stdout,
   });
+
+  process.stderr.write(
+    `Please paste v${DATA_VERSION} story exported from editor:\n`
+  );
 
   rl.on('line', (line) => {
     if (line) {
@@ -75,7 +81,7 @@ export default function generateTemplate() {
     }
 
     const template = {
-      version: 21,
+      version: DATA_VERSION,
       templateVersion: 1,
       layouts: {
         COVER: 0,
