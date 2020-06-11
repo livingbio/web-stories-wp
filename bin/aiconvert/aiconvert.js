@@ -25,16 +25,51 @@ import { v4 as uuidv4 } from 'uuid';
  * Internal dependencies
  */
 import { writeFileAsync } from '../utils/writeFileAsync';
-import { migrate } from '../utils/migration';
+import { migrate as migrateTemplate } from '../utils/migration';
+import { migrate as migrateStoryData } from '../../assets/src/edit-story/migration';
 import { getStoryMarkup } from './storyconvert';
 
 export function getStoryJson(data, template) {
-  const { pages, ...dataOptions } = data;
-  const { pages: templatePages, layouts = {}, ...options } = migrate(template);
+  const { pages: dataPages, ...dataOptions } = data;
+  const {
+    pages: templatePages,
+    layouts = {},
+    version,
+    ...options
+  } = migrateTemplate(template);
 
   for (const [key, value] of Object.entries(dataOptions)) {
     options[key] = options[key] ?? value;
   }
+
+  const storyData = migrateStoryData(
+    {
+      pages: dataPages.map((page, pageIndex) => {
+        const layoutPageIndex = layouts[page.layout];
+        if (layoutPageIndex == null) {
+          const error = new Error(
+            `Layout "${
+              page.layout
+            }" not found in \`template.layout\`: ${JSON.stringify(layouts)}`
+          );
+          error.info = { data, page, pageIndex, template };
+          error.name = 'LayoutNotExistsError';
+          throw error;
+        }
+        const templatePage = templatePages[layoutPageIndex];
+
+        page = ST.select(templatePage).transform(page).root();
+        page.id = uuidv4();
+        for (const element of page.elements) {
+          element.id = uuidv4();
+        }
+
+        return page;
+      }),
+      ...options,
+    },
+    version
+  );
 
   const {
     featuredMediaUrl,
@@ -44,9 +79,11 @@ export function getStoryJson(data, template) {
     defaultPageDuratio,
     publisherName = '',
     logoPlaceholder,
-  } = options;
+    pages,
+  } = storyData;
 
   return {
+    pages,
     story: {
       featuredMediaUrl,
       link,
@@ -73,28 +110,6 @@ export function getStoryJson(data, template) {
       // default value to prevent OutputStory complaining
       fallbackPoster: '',
     },
-    pages: pages.map((page, pageIndex) => {
-      const layoutPageIndex = layouts[page.layout];
-      if (layoutPageIndex == null) {
-        const error = new Error(
-          `Layout "${
-            page.layout
-          }" not found in \`template.layout\`: ${JSON.stringify(layouts)}`
-        );
-        error.info = { data, page, pageIndex, template };
-        error.name = 'LayoutNotExistsError';
-        throw error;
-      }
-      const templatePage = templatePages[layoutPageIndex];
-
-      page = ST.select(templatePage).transform(page).root();
-      page.id = uuidv4();
-      for (const element of page.elements) {
-        element.id = uuidv4();
-      }
-
-      return page;
-    }),
   };
 }
 
