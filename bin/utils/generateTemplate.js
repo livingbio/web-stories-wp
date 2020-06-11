@@ -19,13 +19,23 @@
  */
 import readline from 'readline';
 
-export default function generateTemplate() {
+/**
+ * Internal dependencies
+ */
+import { TEMPLATE_VERSION } from './migration/migrate.js';
+
+const STORY_DATA_VERSION = 21;
+
+async function loadJsonFromStdIn() {
   const lines = [];
 
   const rl = readline.createInterface({
     input: process.stdin,
-    output: process.stdout,
   });
+
+  process.stderr.write(
+    `Please paste v${STORY_DATA_VERSION} story exported from editor:\n`
+  );
 
   rl.on('line', (line) => {
     if (line) {
@@ -35,49 +45,68 @@ export default function generateTemplate() {
     }
   });
 
-  rl.on('close', () => {
-    const { pages } = JSON.parse(lines.join(''));
-    for (const page of pages) {
-      for (const element of page.elements) {
-        if (element.isBackground) {
-          Object.assign(element, {
-            type: '{{background.type}}',
-            scale: '{{background.scale * 100}}',
-            focalX: '{{focal_x / background.width * 100}}',
-            focalY: '{{focal_y / background.height * 100}}',
-            resource: {
-              type: '{{background.type}}',
-              mimeType: '{{background.mime}}',
-              src: '{{background.file}}',
-              width: '{{background.width}}',
-              height: '{{background.height}}',
-              poster: '{{background.thumbnail}}',
-              length: '{{background.duration}}',
-              title: '{{background.title}}',
-              alt: '{{background.description}}',
-              local: false,
-              sizes: "{{background.type === 'video' ? [] : {} }}",
-            },
-            loop: element.loop ?? false,
-            autoPlay: element.autoPlay ?? true,
-            controls: element.controls ?? false,
-          });
-        }
+  await new Promise((resolve) => rl.on('close', resolve));
+
+  return JSON.parse(lines.join(''));
+}
+
+export default async function generateTemplate(exportedStory) {
+  if (!exportedStory) {
+    exportedStory = await loadJsonFromStdIn();
+  }
+
+  const { pages } = exportedStory;
+  for (const page of pages) {
+    page.elements.forEach((element, i) => {
+      if (!element.isBackground) {
+        return;
       }
-    }
 
-    const template = {
-      layouts: {
-        COVER: 0,
-        NORMAL: 1,
-        FOCUS: 2,
-        QUOTE: 3,
-      },
-      pages,
-    };
+      Object.assign(element, {
+        type: '{{background.type}}',
+        scale: '{{background.scale * 100}}',
+        focalX: '{{focal_x / background.width * 100}}',
+        focalY: '{{focal_y / background.height * 100}}',
+        resource: {
+          type: '{{background.type}}',
+          mimeType: '{{background.mime}}',
+          src: '{{background.file}}',
+          width: '{{background.width}}',
+          height: '{{background.height}}',
+          poster: '{{background.thumbnail}}',
+          length: '{{background.duration}}',
+          title: '{{background.title}}',
+          alt: '{{background.description}}',
+          local: false,
+          sizes: "{{background.type === 'video' ? [] : {} }}",
+        },
+        loop: element.loop ?? false,
+        autoPlay: element.autoPlay ?? true,
+        controls: element.controls ?? false,
+      });
 
-    const output = JSON.stringify(template, null, 2);
+      page.elements[i] = [
+        {
+          '{{#if background}}': element,
+        },
+      ];
+    });
+  }
 
-    process.stdout.write(output);
-  });
+  const template = {
+    version: STORY_DATA_VERSION,
+    templateVersion: TEMPLATE_VERSION,
+    layouts: {
+      COVER: 0,
+      NORMAL: 1,
+      FOCUS: 2,
+      QUOTE: 3,
+    },
+    pages,
+  };
+
+  const output = JSON.stringify(template, null, 2);
+  process.stdout.write(output);
+
+  return template;
 }
