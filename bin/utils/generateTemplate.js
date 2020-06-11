@@ -74,6 +74,7 @@ export default function generateTemplate() {
         QUOTE: 3,
       },
       pages,
+      version: 21,
     };
 
     const output = JSON.stringify(template, null, 2);
