@@ -129,6 +129,8 @@
     "jest-matcher-deep-close-to": "^2.0.1",
     "jest-puppeteer": "^4.4.0",
     "jest-silent-reporter": "^0.2.1",
+    "jsdom": "^16.2.2",
+    "jsdom-global": "^3.0.2",
     "jsdom-screenshot": "^3.2.0",
     "karma": "^5.0.9",
     "karma-chrome-launcher": "^3.1.0",
@@ -147,6 +149,7 @@
     "rtlcss-webpack-plugin": "^4.0.3",
     "source-map-loader": "^1.0.0",
     "stylelint": "^13.6.0",
+    "stjs": "0.0.5",
     "stylelint-config-prettier": "^8.0.1",
     "stylelint-config-recommended": "^3.0.0",
     "stylelint-config-styled-components": "^0.1.1",
@@ -164,6 +167,7 @@
     "build": "npm-run-all build:*",
     "prebuild:js": "rm -rf assets/css/* assets/js/*",
     "build:js": "NODE_ENV=production webpack --config webpack.config.cjs",
+    "build:bin": "NODE_ENV=production webpack --config bin/build/webpack.config.cjs",
     "predev": "rm -rf assets/css/* assets/js/*",
     "dev": "webpack --config webpack.config.cjs --watch",
     "env:start": "./bin/local-env/start.sh",
@@ -211,7 +215,8 @@
     "workflow:copy-template-assets": "cp -R assets/images/templates build/storybook/plugin-assets/images/templates",
     "workflow:version": "./bin/commander.js version",
     "workflow:build-plugin": "./bin/commander.js build-plugin",
-    "workflow:fonts": "./bin/commander.js build-fonts"
+    "workflow:fonts": "./bin/commander.js build-fonts",
+    "workflow:aiconvert": "./bin/build/commander.js aiconvert"
   },
   "husky": {
     "hooks": {

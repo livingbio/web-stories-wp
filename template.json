@@ -1,0 +1,1018 @@
+{
+  "layouts": {
+    "COVER": 0,
+    "NORMAL": 1,
+    "FOCUS": 2,
+    "QUOTE": 3
+  },
+  "pages": [
+    {
+      "elements": [
+        {
+          "opacity": 100,
+          "flip": {
+            "vertical": false,
+            "horizontal": false
+          },
+          "rotationAngle": 0,
+          "lockAspectRatio": true,
+          "backgroundColor": {
+            "color": {
+              "r": 255,
+              "g": 255,
+              "b": 255
+            }
+          },
+          "x": 111,
+          "y": -236,
+          "width": 352,
+          "height": 388,
+          "mask": {
+            "type": "rectangle"
+          },
+          "isBackground": true,
+          "type": "{{background.type}}",
+          "id": "8432aa68-3e8e-4fd3-892e-e14eb57dcc26",
+          "scale": "{{background.scale * 100}}",
+          "focalX": "{{focal_x / background.width * 100}}",
+          "focalY": "{{focal_y / background.height * 100}}",
+          "resource": {
+            "type": "{{background.type}}",
+            "mimeType": "{{background.mime}}",
+            "src": "{{background.file}}",
+            "width": "{{background.width}}",
+            "height": "{{background.height}}",
+            "poster": "{{background.thumbnail}}",
+            "length": "{{background.duration}}",
+            "title": "{{background.title}}",
+            "alt": "{{background.description}}",
+            "local": false,
+            "sizes": "{{background.type === 'video' ? [] : {} }}"
+          },
+          "isFill": false,
+          "loop": false,
+          "autoPlay": true,
+          "controls": false
+        },
+        {
+          "opacity": 100,
+          "flip": {
+            "vertical": false,
+            "horizontal": false
+          },
+          "rotationAngle": 0,
+          "lockAspectRatio": true,
+          "backgroundTextMode": "NONE",
+          "font": {
+            "family": "Noto Sans TC",
+            "service": "fonts.google.com",
+            "fallbacks": [
+              "sans-serif"
+            ],
+            "weights": [
+              100,
+              300,
+              400,
+              500,
+              700,
+              900
+            ],
+            "styles": [
+              "regular"
+            ],
+            "variants": [
+              [
+                0,
+                100
+              ],
+              [
+                0,
+                300
+              ],
+              [
+                0,
+                400
+              ],
+              [
+                0,
+                500
+              ],
+              [
+                0,
+                700
+              ],
+              [
+                0,
+                900
+              ]
+            ]
+          },
+          "fontSize": 14,
+          "backgroundColor": {
+            "color": {
+              "r": 196,
+              "g": 196,
+              "b": 196
+            }
+          },
+          "lineHeight": 1.3,
+          "textAlign": "initial",
+          "padding": {
+            "vertical": 0,
+            "horizontal": 0,
+            "locked": true
+          },
+          "type": "text",
+          "id": "408758c5-a328-46f2-8e0d-7c0205343218",
+          "content": "<span style=\"font-weight: 700; color: #fff\">{{new Date().toDateString().slice(4)}}</span>",
+          "x": 36,
+          "y": 305,
+          "width": 363,
+          "height": 24,
+          "scale": 100,
+          "focalX": 50,
+          "focalY": 50
+        },
+        {
+          "opacity": 100,
+          "flip": {
+            "vertical": false,
+            "horizontal": false
+          },
+          "rotationAngle": 0,
+          "lockAspectRatio": true,
+          "backgroundColor": {
+            "color": {
+              "r": 220,
+              "g": 224,
+              "b": 22
+            }
+          },
+          "type": "shape",
+          "x": 36,
+          "y": 333,
+          "width": 78,
+          "height": 9,
+          "scale": 100,
+          "focalX": 50,
+          "focalY": 50,
+          "mask": {
+            "type": "rectangle"
+          },
+          "id": "51b2ed35-cc04-4395-a72d-52eafbbf1a6b"
+        },
+        {
+          "opacity": 100,
+          "flip": {
+            "vertical": false,
+            "horizontal": false
+          },
+          "rotationAngle": 0,
+          "lockAspectRatio": true,
+          "backgroundTextMode": "NONE",
+          "font": {
+            "family": "Noto Sans TC",
+            "service": "fonts.google.com",
+            "fallbacks": [
+              "sans-serif"
+            ],
+            "weights": [
+              100,
+              300,
+              400,
+              500,
+              700,
+              900
+            ],
+            "styles": [
+              "regular"
+            ],
+            "variants": [
+              [
+                0,
+                100
+              ],
+              [
+                0,
+                300
+              ],
+              [
+                0,
+                400
+              ],
+              [
+                0,
+                500
+              ],
+              [
+                0,
+                700
+              ],
+              [
+                0,
+                900
+              ]
+            ]
+          },
+          "fontSize": 30,
+          "backgroundColor": {
+            "color": {
+              "r": 196,
+              "g": 196,
+              "b": 196
+            }
+          },
+          "lineHeight": 1.3,
+          "textAlign": "initial",
+          "padding": {
+            "vertical": 0,
+            "horizontal": 0,
+            "locked": true
+          },
+          "type": "text",
+          "id": "8831dc64-6382-4afa-ad76-f53af770486a",
+          "content": "<span style=\"color: #fff\">{{headline}}</span>\n\n",
+          "x": 37,
+          "y": 358,
+          "width": 363,
+          "height": 113,
+          "scale": 100,
+          "focalX": 50,
+          "focalY": 50
+        },
+        {
+          "opacity": 100,
+          "flip": {
+            "vertical": false,
+            "horizontal": false
+          },
+          "rotationAngle": 0,
+          "lockAspectRatio": false,
+          "backgroundTextMode": "NONE",
+          "font": {
+            "family": "Noto Sans TC",
+            "service": "fonts.google.com",
+            "fallbacks": [
+              "sans-serif"
+            ],
+            "weights": [
+              100,
+              300,
+              400,
+              500,
+              700,
+              900
+            ],
+            "styles": [
+              "regular"
+            ],
+            "variants": [
+              [
+                0,
+                100
+              ],
+              [
+                0,
+                300
+              ],
+              [
+                0,
+                400
+              ],
+              [
+                0,
+                500
+              ],
+              [
+                0,
+                700
+              ],
+              [
+                0,
+                900
+              ]
+            ]
+          },
+          "fontSize": 14,
+          "backgroundColor": {
+            "color": {
+              "r": 196,
+              "g": 196,
+              "b": 196
+            }
+          },
+          "lineHeight": 1.3,
+          "textAlign": "initial",
+          "padding": {
+            "vertical": 0,
+            "horizontal": 0,
+            "locked": true
+          },
+          "type": "text",
+          "id": "854fefa6-72d6-4475-ba51-3300f9129d35",
+          "content": "<span style=\"font-weight: 700; color: #c8c8c8\">{{title}}</span>\n\n\n\n\n\n\n",
+          "x": 37,
+          "y": 487,
+          "width": 202,
+          "height": 189,
+          "scale": 100,
+          "focalX": 50,
+          "focalY": 50
+        }
+      ],
+      "type": "page",
+      "id": "0b9169da-069f-400c-a6c8-0e4961468868",
+      "defaultBackgroundElement": {
+        "opacity": 100,
+        "flip": {
+          "vertical": false,
+          "horizontal": false
+        },
+        "rotationAngle": 0,
+        "lockAspectRatio": true,
+        "backgroundColor": {
+          "color": {
+            "r": 255,
+            "g": 255,
+            "b": 255
+          }
+        },
+        "x": 1,
+        "y": 1,
+        "width": 1,
+        "height": 1,
+        "mask": {
+          "type": "rectangle"
+        },
+        "isBackground": true,
+        "isDefaultBackground": true,
+        "type": "shape",
+        "id": "782f5eb6-c695-4792-862e-4e888211c4b1"
+      },
+      "backgroundOverlay": "solid"
+    },
+    {
+      "backgroundOverlay": "solid",
+      "elements": [
+        {
+          "opacity": 100,
+          "flip": {
+            "vertical": false,
+            "horizontal": false
+          },
+          "rotationAngle": 0,
+          "lockAspectRatio": true,
+          "backgroundColor": {
+            "color": {
+              "r": 255,
+              "g": 255,
+              "b": 255
+            }
+          },
+          "x": 4,
+          "y": 60,
+          "width": 352,
+          "height": 388,
+          "mask": {
+            "type": "rectangle"
+          },
+          "isBackground": true,
+          "type": "{{background.type}}",
+          "id": "3c7243b2-2915-4060-87e9-d453abf93bd7",
+          "scale": "{{background.scale * 100}}",
+          "focalX": "{{focal_x / background.width * 100}}",
+          "focalY": "{{focal_y / background.height * 100}}",
+          "resource": {
+            "type": "{{background.type}}",
+            "mimeType": "{{background.mime}}",
+            "src": "{{background.file}}",
+            "width": "{{background.width}}",
+            "height": "{{background.height}}",
+            "poster": "{{background.thumbnail}}",
+            "length": "{{background.duration}}",
+            "title": "{{background.title}}",
+            "alt": "{{background.description}}",
+            "local": false,
+            "sizes": "{{background.type === 'video' ? [] : {} }}"
+          },
+          "isFill": false,
+          "loop": false,
+          "autoPlay": true,
+          "controls": false
+        },
+        {
+          "opacity": 100,
+          "flip": {
+            "vertical": false,
+            "horizontal": false
+          },
+          "rotationAngle": 0,
+          "lockAspectRatio": true,
+          "backgroundTextMode": "NONE",
+          "font": {
+            "family": "Noto Sans TC",
+            "service": "fonts.google.com",
+            "fallbacks": [
+              "sans-serif"
+            ],
+            "weights": [
+              100,
+              300,
+              400,
+              500,
+              700,
+              900
+            ],
+            "styles": [
+              "regular"
+            ],
+            "variants": [
+              [
+                0,
+                100
+              ],
+              [
+                0,
+                300
+              ],
+              [
+                0,
+                400
+              ],
+              [
+                0,
+                500
+              ],
+              [
+                0,
+                700
+              ],
+              [
+                0,
+                900
+              ]
+            ]
+          },
+          "fontSize": 30,
+          "backgroundColor": {
+            "color": {
+              "r": 196,
+              "g": 196,
+              "b": 196
+            }
+          },
+          "lineHeight": 1.3,
+          "textAlign": "initial",
+          "padding": {
+            "vertical": 0,
+            "horizontal": 0,
+            "locked": true
+          },
+          "type": "text",
+          "id": "40ae577e-e19d-4deb-a955-a05c6d0c4424",
+          "content": "<span style=\"font-weight: 700; color: #fff\">{{headline}}</span>",
+          "x": 52,
+          "y": 421,
+          "width": 336,
+          "height": 38,
+          "scale": 100,
+          "focalX": 50,
+          "focalY": 50
+        },
+        {
+          "opacity": 100,
+          "flip": {
+            "vertical": false,
+            "horizontal": false
+          },
+          "rotationAngle": 0,
+          "lockAspectRatio": true,
+          "backgroundTextMode": "NONE",
+          "font": {
+            "family": "Noto Sans TC",
+            "service": "fonts.google.com",
+            "fallbacks": [
+              "sans-serif"
+            ],
+            "weights": [
+              100,
+              300,
+              400,
+              500,
+              700,
+              900
+            ],
+            "styles": [
+              "regular"
+            ],
+            "variants": [
+              [
+                0,
+                100
+              ],
+              [
+                0,
+                300
+              ],
+              [
+                0,
+                400
+              ],
+              [
+                0,
+                500
+              ],
+              [
+                0,
+                700
+              ],
+              [
+                0,
+                900
+              ]
+            ]
+          },
+          "fontSize": 14,
+          "backgroundColor": {
+            "color": {
+              "r": 196,
+              "g": 196,
+              "b": 196
+            }
+          },
+          "lineHeight": 1.3,
+          "textAlign": "initial",
+          "padding": {
+            "vertical": 0,
+            "horizontal": 0,
+            "locked": true
+          },
+          "type": "text",
+          "id": "8c5d82b8-4072-41fd-b806-723fdf451e1d",
+          "content": "<span style=\"color: #fff\">{{title}}</span>\n\n\n\n\n\n\n\n\n",
+          "x": 51,
+          "y": 460,
+          "width": 355,
+          "height": 236,
+          "scale": 100,
+          "focalX": 50,
+          "focalY": 50
+        }
+      ],
+      "type": "page",
+      "id": "3d89a4f3-a6db-4362-8f1a-89b1e6e77358",
+      "defaultBackgroundElement": {
+        "opacity": 100,
+        "flip": {
+          "vertical": false,
+          "horizontal": false
+        },
+        "rotationAngle": 0,
+        "lockAspectRatio": true,
+        "backgroundColor": {
+          "color": {
+            "r": 255,
+            "g": 255,
+            "b": 255
+          }
+        },
+        "x": 1,
+        "y": 1,
+        "width": 1,
+        "height": 1,
+        "mask": {
+          "type": "rectangle"
+        },
+        "isBackground": true,
+        "isDefaultBackground": true,
+        "type": "shape",
+        "id": "0becac9b-8efa-478e-8151-b09db00749a5"
+      }
+    },
+    {
+      "backgroundOverlay": "solid",
+      "elements": [
+        {
+          "opacity": 100,
+          "flip": {
+            "vertical": false,
+            "horizontal": false
+          },
+          "rotationAngle": 0,
+          "lockAspectRatio": true,
+          "scale": "{{background.scale * 100}}",
+          "focalX": "{{focal_x / background.width * 100}}",
+          "focalY": "{{focal_y / background.height * 100}}",
+          "resource": {
+            "type": "{{background.type}}",
+            "mimeType": "{{background.mime}}",
+            "src": "{{background.file}}",
+            "width": "{{background.width}}",
+            "height": "{{background.height}}",
+            "poster": "{{background.thumbnail}}",
+            "length": "{{background.duration}}",
+            "title": "{{background.title}}",
+            "alt": "{{background.description}}",
+            "local": false,
+            "sizes": "{{background.type === 'video' ? [] : {} }}"
+          },
+          "backgroundColor": {
+            "color": {
+              "r": 255,
+              "g": 255,
+              "b": 255
+            }
+          },
+          "x": 88,
+          "y": 35,
+          "width": 352,
+          "height": 388,
+          "mask": {
+            "type": "rectangle"
+          },
+          "isBackground": true,
+          "id": "bcb76f1a-104a-40c0-9482-77182ec97319",
+          "type": "{{background.type}}",
+          "isFill": false,
+          "loop": false,
+          "autoPlay": true,
+          "controls": false
+        },
+        {
+          "opacity": 100,
+          "flip": {
+            "vertical": false,
+            "horizontal": false
+          },
+          "rotationAngle": 0,
+          "lockAspectRatio": true,
+          "backgroundTextMode": "NONE",
+          "font": {
+            "family": "Noto Sans TC",
+            "service": "fonts.google.com",
+            "fallbacks": [
+              "sans-serif"
+            ],
+            "weights": [
+              100,
+              300,
+              400,
+              500,
+              700,
+              900
+            ],
+            "styles": [
+              "regular"
+            ],
+            "variants": [
+              [
+                0,
+                100
+              ],
+              [
+                0,
+                300
+              ],
+              [
+                0,
+                400
+              ],
+              [
+                0,
+                500
+              ],
+              [
+                0,
+                700
+              ],
+              [
+                0,
+                900
+              ]
+            ]
+          },
+          "fontSize": 18,
+          "backgroundColor": {
+            "color": {
+              "r": 196,
+              "g": 196,
+              "b": 196
+            }
+          },
+          "lineHeight": 1.5,
+          "textAlign": "initial",
+          "padding": {
+            "vertical": 0,
+            "horizontal": 0,
+            "locked": true
+          },
+          "id": "937d285c-9417-4845-a5da-5f2aa5508b0b",
+          "content": "<span style=\"font-weight: 700; color: #fff\">{{headline}}</span>\n<span style=\"font-weight: 700; color: #fff\">{{title}}</span>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "x": 27,
+          "y": 62,
+          "width": 383,
+          "height": 622,
+          "scale": 100,
+          "focalX": 50,
+          "focalY": 50,
+          "type": "text"
+        }
+      ],
+      "type": "page",
+      "id": "d2067f95-1ccc-459a-88b8-8702c81908bd",
+      "defaultBackgroundElement": {
+        "opacity": 100,
+        "flip": {
+          "vertical": false,
+          "horizontal": false
+        },
+        "rotationAngle": 0,
+        "lockAspectRatio": true,
+        "backgroundColor": {
+          "color": {
+            "r": 255,
+            "g": 255,
+            "b": 255
+          }
+        },
+        "x": 1,
+        "y": 1,
+        "width": 1,
+        "height": 1,
+        "mask": {
+          "type": "rectangle"
+        },
+        "isBackground": true,
+        "isDefaultBackground": true,
+        "type": "shape",
+        "id": "0becac9b-8efa-478e-8151-b09db00749a5"
+      }
+    },
+    {
+      "backgroundOverlay": "solid",
+      "elements": [
+        {
+          "opacity": 100,
+          "flip": {
+            "vertical": false,
+            "horizontal": false
+          },
+          "rotationAngle": 0,
+          "lockAspectRatio": true,
+          "scale": "{{background.scale * 100}}",
+          "focalX": "{{focal_x / background.width * 100}}",
+          "focalY": "{{focal_y / background.height * 100}}",
+          "resource": {
+            "type": "{{background.type}}",
+            "mimeType": "{{background.mime}}",
+            "src": "{{background.file}}",
+            "width": "{{background.width}}",
+            "height": "{{background.height}}",
+            "poster": "{{background.thumbnail}}",
+            "length": "{{background.duration}}",
+            "title": "{{background.title}}",
+            "alt": "{{background.description}}",
+            "local": false,
+            "sizes": "{{background.type === 'video' ? [] : {} }}"
+          },
+          "backgroundColor": {
+            "color": {
+              "r": 255,
+              "g": 255,
+              "b": 255
+            }
+          },
+          "x": 191,
+          "y": -271,
+          "width": 229,
+          "height": 260,
+          "mask": {
+            "type": "rectangle"
+          },
+          "isBackground": true,
+          "id": "b3f46e7b-6219-4c23-af79-ccf064df8618",
+          "type": "{{background.type}}",
+          "isFill": false,
+          "loop": false,
+          "autoPlay": true,
+          "controls": false
+        },
+        {
+          "opacity": 100,
+          "flip": {
+            "vertical": false,
+            "horizontal": false
+          },
+          "rotationAngle": 0,
+          "lockAspectRatio": true,
+          "backgroundTextMode": "NONE",
+          "font": {
+            "family": "Noto Sans TC",
+            "service": "fonts.google.com",
+            "fallbacks": [
+              "sans-serif"
+            ],
+            "weights": [
+              100,
+              300,
+              400,
+              500,
+              700,
+              900
+            ],
+            "styles": [
+              "regular"
+            ],
+            "variants": [
+              [
+                0,
+                100
+              ],
+              [
+                0,
+                300
+              ],
+              [
+                0,
+                400
+              ],
+              [
+                0,
+                500
+              ],
+              [
+                0,
+                700
+              ],
+              [
+                0,
+                900
+              ]
+            ]
+          },
+          "fontSize": 36,
+          "backgroundColor": {
+            "color": {
+              "r": 196,
+              "g": 196,
+              "b": 196
+            }
+          },
+          "lineHeight": 1.5,
+          "textAlign": "initial",
+          "padding": {
+            "vertical": 0,
+            "horizontal": 0,
+            "locked": true
+          },
+          "id": "f21e400c-dace-45e3-9353-a32bef538927",
+          "content": "<span style=\"font-weight: 700; color: #fff\">{{headline}}</span>\n<span style=\"font-weight: 700; color: #fff\">{{title}}</span>\n\n\n\n\n\n\n\n",
+          "x": 57,
+          "y": 158,
+          "width": 325,
+          "height": 534,
+          "scale": 100,
+          "focalX": 50,
+          "focalY": 50,
+          "type": "text"
+        },
+        {
+          "opacity": 100,
+          "flip": {
+            "vertical": false,
+            "horizontal": false
+          },
+          "rotationAngle": 0,
+          "lockAspectRatio": true,
+          "backgroundTextMode": "NONE",
+          "font": {
+            "family": "Roboto",
+            "weights": [
+              100,
+              300,
+              400,
+              500,
+              700,
+              900
+            ],
+            "styles": [
+              "italic",
+              "regular"
+            ],
+            "variants": [
+              [
+                0,
+                100
+              ],
+              [
+                1,
+                100
+              ],
+              [
+                0,
+                300
+              ],
+              [
+                1,
+                300
+              ],
+              [
+                0,
+                400
+              ],
+              [
+                1,
+                400
+              ],
+              [
+                0,
+                500
+              ],
+              [
+                1,
+                500
+              ],
+              [
+                0,
+                700
+              ],
+              [
+                1,
+                700
+              ],
+              [
+                0,
+                900
+              ],
+              [
+                1,
+                900
+              ]
+            ],
+            "fallbacks": [
+              "Helvetica Neue",
+              "Helvetica",
+              "sans-serif"
+            ],
+            "service": "fonts.google.com"
+          },
+          "fontSize": 50,
+          "backgroundColor": {
+            "color": {
+              "r": 196,
+              "g": 196,
+              "b": 196
+            }
+          },
+          "lineHeight": 1.3,
+          "textAlign": "initial",
+          "padding": {
+            "vertical": 0,
+            "horizontal": 0,
+            "locked": true
+          },
+          "type": "text",
+          "id": "081ef588-4172-4668-be18-28cdc23b4a7b",
+          "title": "Heading",
+          "content": "<span style=\"font-weight: 700; color: #fff\">\"</span>",
+          "x": 203,
+          "y": 107,
+          "width": 220,
+          "height": 64,
+          "scale": 100,
+          "focalX": 50,
+          "focalY": 50
+        }
+      ],
+      "type": "page",
+      "id": "2c5ab7a1-f3a1-471a-912b-3437f1fd17e7",
+      "defaultBackgroundElement": {
+        "opacity": 100,
+        "flip": {
+          "vertical": false,
+          "horizontal": false
+        },
+        "rotationAngle": 0,
+        "lockAspectRatio": true,
+        "backgroundColor": {
+          "color": {
+            "r": 255,
+            "g": 255,
+            "b": 255
+          }
+        },
+        "x": 1,
+        "y": 1,
+        "width": 1,
+        "height": 1,
+        "mask": {
+          "type": "rectangle"
+        },
+        "isBackground": true,
+        "isDefaultBackground": true,
+        "type": "shape",
+        "id": "0becac9b-8efa-478e-8151-b09db00749a5"
+      }
+    }
+  ]
+}

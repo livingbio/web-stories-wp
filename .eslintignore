@@ -4,3 +4,4 @@
 **/assets/src/dashboard/templates/raw/*.json
 build/*
 !.storybook
+bin/build/*/**
