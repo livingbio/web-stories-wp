@@ -1,4 +1,6 @@
 {
+  "version": 21,
+  "templateVersion": 1,
   "layouts": {
     "COVER": 0,
     "NORMAL": 1,
@@ -8,52 +10,56 @@
   "pages": [
     {
       "elements": [
-        {
-          "opacity": 100,
-          "flip": {
-            "vertical": false,
-            "horizontal": false
-          },
-          "rotationAngle": 0,
-          "lockAspectRatio": true,
-          "backgroundColor": {
-            "color": {
-              "r": 255,
-              "g": 255,
-              "b": 255
+        [
+          {
+            "{{#if background}}": {
+              "opacity": 100,
+              "flip": {
+                "vertical": false,
+                "horizontal": false
+              },
+              "rotationAngle": 0,
+              "lockAspectRatio": true,
+              "backgroundColor": {
+                "color": {
+                  "r": 255,
+                  "g": 255,
+                  "b": 255
+                }
+              },
+              "x": 111,
+              "y": -236,
+              "width": 352,
+              "height": 388,
+              "mask": {
+                "type": "rectangle"
+              },
+              "isBackground": true,
+              "type": "{{background.type}}",
+              "id": "8432aa68-3e8e-4fd3-892e-e14eb57dcc26",
+              "scale": "{{background.scale * 100}}",
+              "focalX": "{{focal_x / background.width * 100}}",
+              "focalY": "{{focal_y / background.height * 100}}",
+              "resource": {
+                "type": "{{background.type}}",
+                "mimeType": "{{background.mime}}",
+                "src": "{{background.file}}",
+                "width": "{{background.width}}",
+                "height": "{{background.height}}",
+                "poster": "{{background.thumbnail}}",
+                "length": "{{background.duration}}",
+                "title": "{{background.title}}",
+                "alt": "{{background.description}}",
+                "local": false,
+                "sizes": "{{background.type === 'video' ? [] : {} }}"
+              },
+              "isFill": false,
+              "loop": false,
+              "autoPlay": true,
+              "controls": false
             }
-          },
-          "x": 111,
-          "y": -236,
-          "width": 352,
-          "height": 388,
-          "mask": {
-            "type": "rectangle"
-          },
-          "isBackground": true,
-          "type": "{{background.type}}",
-          "id": "8432aa68-3e8e-4fd3-892e-e14eb57dcc26",
-          "scale": "{{background.scale * 100}}",
-          "focalX": "{{focal_x / background.width * 100}}",
-          "focalY": "{{focal_y / background.height * 100}}",
-          "resource": {
-            "type": "{{background.type}}",
-            "mimeType": "{{background.mime}}",
-            "src": "{{background.file}}",
-            "width": "{{background.width}}",
-            "height": "{{background.height}}",
-            "poster": "{{background.thumbnail}}",
-            "length": "{{background.duration}}",
-            "title": "{{background.title}}",
-            "alt": "{{background.description}}",
-            "local": false,
-            "sizes": "{{background.type === 'video' ? [] : {} }}"
-          },
-          "isFill": false,
-          "loop": false,
-          "autoPlay": true,
-          "controls": false
-        },
+          }
+        ],
         {
           "opacity": 100,
           "flip": {
@@ -214,7 +220,7 @@
               ]
             ]
           },
-          "fontSize": 30,
+          "fontSize": 36,
           "backgroundColor": {
             "color": {
               "r": 196,
@@ -232,10 +238,10 @@
           "type": "text",
           "id": "8831dc64-6382-4afa-ad76-f53af770486a",
           "content": "<span style=\"color: #fff\">{{headline}}</span>\n\n",
-          "x": 37,
-          "y": 358,
+          "x": 38,
+          "y": 356,
           "width": 363,
-          "height": 113,
+          "height": 137,
           "scale": 100,
           "focalX": 50,
           "focalY": 50
@@ -293,7 +299,7 @@
               ]
             ]
           },
-          "fontSize": 14,
+          "fontSize": 20,
           "backgroundColor": {
             "color": {
               "r": 196,
@@ -310,11 +316,11 @@
           },
           "type": "text",
           "id": "854fefa6-72d6-4475-ba51-3300f9129d35",
-          "content": "<span style=\"font-weight: 700; color: #c8c8c8\">{{title}}</span>\n\n\n\n\n\n\n",
-          "x": 37,
-          "y": 487,
-          "width": 202,
-          "height": 189,
+          "content": "<span style=\"font-weight: 700; color: #c8c8c8\">{{title}}</span>\n\n\n\n\n\n",
+          "x": 36,
+          "y": 494,
+          "width": 361,
+          "height": 176,
           "scale": 100,
           "focalX": 50,
           "focalY": 50
@@ -354,52 +360,56 @@
     {
       "backgroundOverlay": "solid",
       "elements": [
-        {
-          "opacity": 100,
-          "flip": {
-            "vertical": false,
-            "horizontal": false
-          },
-          "rotationAngle": 0,
-          "lockAspectRatio": true,
-          "backgroundColor": {
-            "color": {
-              "r": 255,
-              "g": 255,
-              "b": 255
+        [
+          {
+            "{{#if background}}": {
+              "opacity": 100,
+              "flip": {
+                "vertical": false,
+                "horizontal": false
+              },
+              "rotationAngle": 0,
+              "lockAspectRatio": true,
+              "backgroundColor": {
+                "color": {
+                  "r": 255,
+                  "g": 255,
+                  "b": 255
+                }
+              },
+              "x": 4,
+              "y": 60,
+              "width": 352,
+              "height": 388,
+              "mask": {
+                "type": "rectangle"
+              },
+              "isBackground": true,
+              "type": "{{background.type}}",
+              "id": "3c7243b2-2915-4060-87e9-d453abf93bd7",
+              "scale": "{{background.scale * 100}}",
+              "focalX": "{{focal_x / background.width * 100}}",
+              "focalY": "{{focal_y / background.height * 100}}",
+              "resource": {
+                "type": "{{background.type}}",
+                "mimeType": "{{background.mime}}",
+                "src": "{{background.file}}",
+                "width": "{{background.width}}",
+                "height": "{{background.height}}",
+                "poster": "{{background.thumbnail}}",
+                "length": "{{background.duration}}",
+                "title": "{{background.title}}",
+                "alt": "{{background.description}}",
+                "local": false,
+                "sizes": "{{background.type === 'video' ? [] : {} }}"
+              },
+              "isFill": false,
+              "loop": false,
+              "autoPlay": true,
+              "controls": false
             }
-          },
-          "x": 4,
-          "y": 60,
-          "width": 352,
-          "height": 388,
-          "mask": {
-            "type": "rectangle"
-          },
-          "isBackground": true,
-          "type": "{{background.type}}",
-          "id": "3c7243b2-2915-4060-87e9-d453abf93bd7",
-          "scale": "{{background.scale * 100}}",
-          "focalX": "{{focal_x / background.width * 100}}",
-          "focalY": "{{focal_y / background.height * 100}}",
-          "resource": {
-            "type": "{{background.type}}",
-            "mimeType": "{{background.mime}}",
-            "src": "{{background.file}}",
-            "width": "{{background.width}}",
-            "height": "{{background.height}}",
-            "poster": "{{background.thumbnail}}",
-            "length": "{{background.duration}}",
-            "title": "{{background.title}}",
-            "alt": "{{background.description}}",
-            "local": false,
-            "sizes": "{{background.type === 'video' ? [] : {} }}"
-          },
-          "isFill": false,
-          "loop": false,
-          "autoPlay": true,
-          "controls": false
-        },
+          }
+        ],
         {
           "opacity": 100,
           "flip": {
@@ -453,7 +463,7 @@
               ]
             ]
           },
-          "fontSize": 30,
+          "fontSize": 36,
           "backgroundColor": {
             "color": {
               "r": 196,
@@ -471,10 +481,10 @@
           "type": "text",
           "id": "40ae577e-e19d-4deb-a955-a05c6d0c4424",
           "content": "<span style=\"font-weight: 700; color: #fff\">{{headline}}</span>",
-          "x": 52,
-          "y": 421,
+          "x": 41,
+          "y": 414,
           "width": 336,
-          "height": 38,
+          "height": 46,
           "scale": 100,
           "focalX": 50,
           "focalY": 50
@@ -532,7 +542,7 @@
               ]
             ]
           },
-          "fontSize": 14,
+          "fontSize": 20,
           "backgroundColor": {
             "color": {
               "r": 196,
@@ -549,11 +559,11 @@
           },
           "type": "text",
           "id": "8c5d82b8-4072-41fd-b806-723fdf451e1d",
-          "content": "<span style=\"color: #fff\">{{title}}</span>\n\n\n\n\n\n\n\n\n",
-          "x": 51,
+          "content": "<span style=\"color: #fff\">{{title}}</span>\n\n\n\n\n\n\n",
+          "x": 41,
           "y": 460,
-          "width": 355,
-          "height": 236,
+          "width": 353,
+          "height": 201,
           "scale": 100,
           "focalX": 50,
           "focalY": 50
@@ -592,52 +602,56 @@
     {
       "backgroundOverlay": "solid",
       "elements": [
-        {
-          "opacity": 100,
-          "flip": {
-            "vertical": false,
-            "horizontal": false
-          },
-          "rotationAngle": 0,
-          "lockAspectRatio": true,
-          "scale": "{{background.scale * 100}}",
-          "focalX": "{{focal_x / background.width * 100}}",
-          "focalY": "{{focal_y / background.height * 100}}",
-          "resource": {
-            "type": "{{background.type}}",
-            "mimeType": "{{background.mime}}",
-            "src": "{{background.file}}",
-            "width": "{{background.width}}",
-            "height": "{{background.height}}",
-            "poster": "{{background.thumbnail}}",
-            "length": "{{background.duration}}",
-            "title": "{{background.title}}",
-            "alt": "{{background.description}}",
-            "local": false,
-            "sizes": "{{background.type === 'video' ? [] : {} }}"
-          },
-          "backgroundColor": {
-            "color": {
-              "r": 255,
-              "g": 255,
-              "b": 255
+        [
+          {
+            "{{#if background}}": {
+              "opacity": 100,
+              "flip": {
+                "vertical": false,
+                "horizontal": false
+              },
+              "rotationAngle": 0,
+              "lockAspectRatio": true,
+              "scale": "{{background.scale * 100}}",
+              "focalX": "{{focal_x / background.width * 100}}",
+              "focalY": "{{focal_y / background.height * 100}}",
+              "resource": {
+                "type": "{{background.type}}",
+                "mimeType": "{{background.mime}}",
+                "src": "{{background.file}}",
+                "width": "{{background.width}}",
+                "height": "{{background.height}}",
+                "poster": "{{background.thumbnail}}",
+                "length": "{{background.duration}}",
+                "title": "{{background.title}}",
+                "alt": "{{background.description}}",
+                "local": false,
+                "sizes": "{{background.type === 'video' ? [] : {} }}"
+              },
+              "backgroundColor": {
+                "color": {
+                  "r": 255,
+                  "g": 255,
+                  "b": 255
+                }
+              },
+              "x": 88,
+              "y": 35,
+              "width": 352,
+              "height": 388,
+              "mask": {
+                "type": "rectangle"
+              },
+              "isBackground": true,
+              "id": "bcb76f1a-104a-40c0-9482-77182ec97319",
+              "type": "{{background.type}}",
+              "isFill": false,
+              "loop": false,
+              "autoPlay": true,
+              "controls": false
             }
-          },
-          "x": 88,
-          "y": 35,
-          "width": 352,
-          "height": 388,
-          "mask": {
-            "type": "rectangle"
-          },
-          "isBackground": true,
-          "id": "bcb76f1a-104a-40c0-9482-77182ec97319",
-          "type": "{{background.type}}",
-          "isFill": false,
-          "loop": false,
-          "autoPlay": true,
-          "controls": false
-        },
+          }
+        ],
         {
           "opacity": 100,
           "flip": {
@@ -691,7 +705,7 @@
               ]
             ]
           },
-          "fontSize": 18,
+          "fontSize": 20,
           "backgroundColor": {
             "color": {
               "r": 196,
@@ -707,11 +721,11 @@
             "locked": true
           },
           "id": "937d285c-9417-4845-a5da-5f2aa5508b0b",
-          "content": "<span style=\"font-weight: 700; color: #fff\">{{headline}}</span>\n<span style=\"font-weight: 700; color: #fff\">{{title}}</span>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "content": "<span style=\"font-weight: 700; color: #fff\">{{headline}}</span>\n<span style=\"font-weight: 700; color: #fff\">{{title}}</span>\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
           "x": 27,
           "y": 62,
           "width": 383,
-          "height": 622,
+          "height": 478,
           "scale": 100,
           "focalX": 50,
           "focalY": 50,
@@ -751,52 +765,56 @@
     {
       "backgroundOverlay": "solid",
       "elements": [
-        {
-          "opacity": 100,
-          "flip": {
-            "vertical": false,
-            "horizontal": false
-          },
-          "rotationAngle": 0,
-          "lockAspectRatio": true,
-          "scale": "{{background.scale * 100}}",
-          "focalX": "{{focal_x / background.width * 100}}",
-          "focalY": "{{focal_y / background.height * 100}}",
-          "resource": {
-            "type": "{{background.type}}",
-            "mimeType": "{{background.mime}}",
-            "src": "{{background.file}}",
-            "width": "{{background.width}}",
-            "height": "{{background.height}}",
-            "poster": "{{background.thumbnail}}",
-            "length": "{{background.duration}}",
-            "title": "{{background.title}}",
-            "alt": "{{background.description}}",
-            "local": false,
-            "sizes": "{{background.type === 'video' ? [] : {} }}"
-          },
-          "backgroundColor": {
-            "color": {
-              "r": 255,
-              "g": 255,
-              "b": 255
+        [
+          {
+            "{{#if background}}": {
+              "opacity": 100,
+              "flip": {
+                "vertical": false,
+                "horizontal": false
+              },
+              "rotationAngle": 0,
+              "lockAspectRatio": true,
+              "scale": "{{background.scale * 100}}",
+              "focalX": "{{focal_x / background.width * 100}}",
+              "focalY": "{{focal_y / background.height * 100}}",
+              "resource": {
+                "type": "{{background.type}}",
+                "mimeType": "{{background.mime}}",
+                "src": "{{background.file}}",
+                "width": "{{background.width}}",
+                "height": "{{background.height}}",
+                "poster": "{{background.thumbnail}}",
+                "length": "{{background.duration}}",
+                "title": "{{background.title}}",
+                "alt": "{{background.description}}",
+                "local": false,
+                "sizes": "{{background.type === 'video' ? [] : {} }}"
+              },
+              "backgroundColor": {
+                "color": {
+                  "r": 255,
+                  "g": 255,
+                  "b": 255
+                }
+              },
+              "x": 191,
+              "y": -271,
+              "width": 229,
+              "height": 260,
+              "mask": {
+                "type": "rectangle"
+              },
+              "isBackground": true,
+              "id": "b3f46e7b-6219-4c23-af79-ccf064df8618",
+              "type": "{{background.type}}",
+              "isFill": false,
+              "loop": false,
+              "autoPlay": true,
+              "controls": false
             }
-          },
-          "x": 191,
-          "y": -271,
-          "width": 229,
-          "height": 260,
-          "mask": {
-            "type": "rectangle"
-          },
-          "isBackground": true,
-          "id": "b3f46e7b-6219-4c23-af79-ccf064df8618",
-          "type": "{{background.type}}",
-          "isFill": false,
-          "loop": false,
-          "autoPlay": true,
-          "controls": false
-        },
+          }
+        ],
         {
           "opacity": 100,
           "flip": {
@@ -866,11 +884,11 @@
             "locked": true
           },
           "id": "f21e400c-dace-45e3-9353-a32bef538927",
-          "content": "<span style=\"font-weight: 700; color: #fff\">{{headline}}</span>\n<span style=\"font-weight: 700; color: #fff\">{{title}}</span>\n\n\n\n\n\n\n\n",
+          "content": "<span style=\"font-weight: 700; color: #fff\">{{headline}}</span>\n<span style=\"font-weight: 700; color: #fff\">{{title}}</span>\n\n\n\n\n\n\n",
           "x": 57,
           "y": 158,
           "width": 325,
-          "height": 534,
+          "height": 481,
           "scale": 100,
           "focalX": 50,
           "focalY": 50,
