@@ -3,9 +3,9 @@
     "director": "StoryDirector",
     "pages": [
         {
-            "id": 1440,
+            "id": 2945,
             "background": {
-                "id": 3726672,
+                "id": 3741848,
                 "type": "image",
                 "license": "User",
                 "file": "https://static-gstudio.gliacloud.com/10cfca18ac83b5efda7abeb739e1e5aa3ea61624.png",
@@ -20,19 +20,19 @@
                 "scale": 1.0,
                 "thumbnail": "https://static-gstudio.gliacloud.com/10cfca18ac83b5efda7abeb739e1e5aa3ea61624.png",
                 "url": "https://images.zi.org.tw/starryeagle/2020/06/07215354/1591538034-3e01b54ea125d73f26dd7c8c46431af1.png",
-                "source": ""
+                "source": "User"
             },
-            "headline": "",
-            "title": "(\u6301\u7e8c\u66f4\u65b0)\u597d\u770b\u7684\u803d\u7f8e\u751c\u6587-\u63a8\u85a6\u66f8\u5eab #1",
+            "headline": "(持續更新)好看的耽美甜文-推薦書庫 #1",
+            "title": "",
             "keywords": null,
             "focal_x": 310,
             "focal_y": 230,
             "layout": "COVER"
         },
         {
-            "id": 1441,
+            "id": 2946,
             "background": {
-                "id": 3725640,
+                "id": 3740828,
                 "type": "image",
                 "license": "User",
                 "file": "https://static-gstudio.gliacloud.com/10cfca18ac83b5efda7abeb739e1e5aa3ea61624.png",
@@ -47,46 +47,19 @@
                 "scale": 1.0,
                 "thumbnail": "https://static-gstudio.gliacloud.com/10cfca18ac83b5efda7abeb739e1e5aa3ea61624.png",
                 "url": "https://images.zi.org.tw/starryeagle/2020/06/07215354/1591538034-3e01b54ea125d73f26dd7c8c46431af1.png",
-                "source": ""
+                "source": "User"
             },
             "headline": "",
-            "title": "\u66f4\u591a\u5fc3\u5f97\u6587\u9023\u7d50",
-            "keywords": null,
-            "focal_x": 310,
-            "focal_y": 230,
-            "layout": "FOCUS"
-        },
-        {
-            "id": 1442,
-            "background": {
-                "id": 3725640,
-                "type": "image",
-                "license": "User",
-                "file": "https://static-gstudio.gliacloud.com/10cfca18ac83b5efda7abeb739e1e5aa3ea61624.png",
-                "title": "",
-                "duration": 0.0,
-                "mime": "image/png",
-                "description": "",
-                "width": 550,
-                "height": 461,
-                "start": 0.0,
-                "end": 0.0,
-                "scale": 1.0,
-                "thumbnail": "https://static-gstudio.gliacloud.com/10cfca18ac83b5efda7abeb739e1e5aa3ea61624.png",
-                "url": "https://images.zi.org.tw/starryeagle/2020/06/07215354/1591538034-3e01b54ea125d73f26dd7c8c46431af1.png",
-                "source": ""
-            },
-            "headline": "",
-            "title": "\u3010\u803d\u7f8e\u5fc3\u5f97\u6587\u7e3d\u8868\u3011\u90a3\u4e9b\u5e74\uff0c\u5beb\u904e\u76845\u661f\u63a8\u85a6\u5c0f\u8aaa",
+            "title": "更多心得文連結",
             "keywords": null,
             "focal_x": 310,
             "focal_y": 230,
             "layout": "QUOTE"
         },
         {
-            "id": 1443,
+            "id": 2947,
             "background": {
-                "id": 3725640,
+                "id": 3740828,
                 "type": "image",
                 "license": "User",
                 "file": "https://static-gstudio.gliacloud.com/10cfca18ac83b5efda7abeb739e1e5aa3ea61624.png",
@@ -101,33 +74,60 @@
                 "scale": 1.0,
                 "thumbnail": "https://static-gstudio.gliacloud.com/10cfca18ac83b5efda7abeb739e1e5aa3ea61624.png",
                 "url": "https://images.zi.org.tw/starryeagle/2020/06/07215354/1591538034-3e01b54ea125d73f26dd7c8c46431af1.png",
-                "source": ""
+                "source": "User"
             },
             "headline": "",
-            "title": "\u300c\u53e4\u4ee3\u3001\u73fe\u4ee3\u2026\u300d\u803d\u7f8e\u5206\u985e\u5fc3\u5f97\u6587",
+            "title": "【耽美心得文總表】那些年，寫過的5星推薦小說",
             "keywords": null,
             "focal_x": 310,
             "focal_y": 230,
-            "layout": "NORMAL"
+            "layout": "QUOTE"
         },
         {
-            "id": 1444,
+            "id": 2948,
+            "background": {
+                "id": 3741860,
+                "type": "video",
+                "license": "Creative Common",
+                "file": "https://static-gstudio.gliacloud.com/0171cfe44a57ed6cbf69fa7a1afeae27762423ea.mp4",
+                "title": "维苏威火山喷发后，外墙的残骸与庞贝城的柱子。现代外观。",
+                "duration": 20.554,
+                "mime": "video/mp4",
+                "description": "",
+                "width": 1920,
+                "height": 1080,
+                "start": 0.0,
+                "end": 0.0,
+                "scale": 1.0,
+                "thumbnail": "https://static-gstudio.gliacloud.com/3885f4bb5f6a608dcd627550f5ab18777ffdb21b.jpg",
+                "url": "https://dm0qx8t0i9gc9.cloudfront.net/watermarks/video/SVDzTPVcis1o8gdx/videoblocks-the-remains-of-the-facade-with-columns-of-pompeii-after-the-eruption-of-vesuvius-modern-look_bdlf4hypz__3f5f9d11a71d29cc4c0b2ec626b7c9b0__P360.mp4?type=preview&origin=VIDEOBLOCKS&timestamp_ms=1591723513494&publicKey=xC4NP5XgEfQOXGGzdxlHGZ3TAiqwipiuzrk5fQ4FTvCKbnUC3KhSgWeNn37O9aMR&organizationId=103570&apiVersion=1.0&stockItemId=5192195&resolution=180p&searchId=23dd2ac5-40f3-4fda-ae90-bf83be9195e2&searchPageId=08c2b952-8d6c-4179-aced-6c132ad5b5ed#gliadriver=StoryBlocksVideoZH&key=5192195",
+                "source": ""
+            },
+            "headline": "",
+            "title": "「古代、現代…」耽美分類心得文",
+            "keywords": "ALL:耽美分類心得文. 古代、現代…|QUERY:古代、現代…",
+            "focal_x": 1033,
+            "focal_y": 540,
+            "layout": "QUOTE"
+        },
+        {
+            "id": 2949,
             "background": null,
             "headline": "",
-            "title": "\u73fe\u4ee3\u7e3d\u8868 \u73fe\u4ee3\u7a7f\u8d8a \u73fe\u4ee3\u91cd\u751f",
-            "keywords": "ALL:\u73fe\u4ee3\u7e3d\u8868 \u73fe\u4ee3\u7a7f\u8d8a \u73fe\u4ee3\u91cd\u751f.|QUERY:\u73fe\u4ee3\u7e3d\u8868 \u73fe\u4ee3\u7a7f\u8d8a \u73fe\u4ee3\u91cd\u751f.",
+            "title": "現代總表 現代穿越 現代重生",
+            "keywords": "ALL:現代總表 現代穿越 現代重生.|QUERY:None",
             "focal_x": -1,
             "focal_y": -1,
-            "layout": "FOCUS"
+            "layout": "QUOTE"
         },
         {
-            "id": 1445,
+            "id": 2950,
             "background": {
-                "id": 3735367,
+                "id": 3741862,
                 "type": "video",
                 "license": "Creative Common",
                 "file": "https://static-gstudio.gliacloud.com/386fe76149d5de5a615a9b87371f5583989abff2.mp4",
-                "title": "",
+                "title": "慢动作镜子被锤子打破",
                 "duration": 20.986667,
                 "mime": "video/mp4",
                 "description": "",
@@ -137,24 +137,24 @@
                 "end": 0.0,
                 "scale": 1.0,
                 "thumbnail": "https://static-gstudio.gliacloud.com/2b2e69fa6bd86b38718216972a56f078d9a08e9f.jpg",
-                "url": "https://d2v9y0dukr6mq2.cloudfront.net/video/preview/GTYSdDW/slow-motion-mirror-broken-by-hammer_-1ivxqver__PM.mp4?type=preview&origin=VIDEOBLOCKS&timestamp_ms=1591679397637&publicKey=xC4NP5XgEfQOXGGzdxlHGZ3TAiqwipiuzrk5fQ4FTvCKbnUC3KhSgWeNn37O9aMR&organizationId=103570&apiVersion=1.0&stockItemId=11715&resolution=180p&searchId=2aa9f6e4-8fbb-4216-a6b3-d206584eaccd&searchPageId=6f4327f7-a956-4927-aa06-48dd59b375f0#gliadriver=StoryBlocksVideoZH&key=11715",
+                "url": "https://d2v9y0dukr6mq2.cloudfront.net/video/preview/GTYSdDW/slow-motion-mirror-broken-by-hammer_-1ivxqver__PM.mp4?type=preview&origin=VIDEOBLOCKS&timestamp_ms=1591723522672&publicKey=xC4NP5XgEfQOXGGzdxlHGZ3TAiqwipiuzrk5fQ4FTvCKbnUC3KhSgWeNn37O9aMR&organizationId=103570&apiVersion=1.0&stockItemId=11715&resolution=180p&searchId=62910daf-f049-4869-b5bb-ec9770087b71&searchPageId=7bd79733-beb6-48d2-9913-89c4572c8336#gliadriver=StoryBlocksVideoZH&key=11715",
                 "source": ""
             },
             "headline": "",
-            "title": "\u7834\u93e1\u91cd\u5713 \u4fee\u771f\u6587 \u6697\u6200",
-            "keywords": "\u7834\u93e1\u91cd\u5713 \u4fee\u771f\u6587 \u6697\u6200.",
-            "focal_x": 885,
+            "title": "破鏡重圓 修真文 暗戀",
+            "keywords": "ALL:破鏡重圓 修真文 暗戀.|QUERY:破鏡重圓 修真文 暗戀.",
+            "focal_x": 960,
             "focal_y": 540,
-            "layout": "NORMAL"
+            "layout": "QUOTE"
         },
         {
-            "id": 1446,
+            "id": 2951,
             "background": {
-                "id": 3735368,
+                "id": 3741867,
                 "type": "video",
                 "license": "Creative Common",
                 "file": "https://static-gstudio.gliacloud.com/e593e444b37d10e53c6fb1cb4d04131223b47ebe.mp4",
-                "title": "",
+                "title": "棕榈树在强风的吹拂下摇摆",
                 "duration": 11.427,
                 "mime": "video/mp4",
                 "description": "",
@@ -164,15 +164,15 @@
                 "end": 0.0,
                 "scale": 1.0,
                 "thumbnail": "https://static-gstudio.gliacloud.com/fb0fb5f55e95632d408902f4a6608cbe19ca175e.jpg",
-                "url": "https://dm0qx8t0i9gc9.cloudfront.net/watermarks/video/BrltVHefQjiwahyhy/videoblocks-palm-trees-blow-and-sway-from-a-strong-ocean-wind_hfvqxwgezx__89ee3de169f5b75bd19ff6d9f16ca864__P360.mp4?type=preview&origin=VIDEOBLOCKS&timestamp_ms=1591679409397&publicKey=xC4NP5XgEfQOXGGzdxlHGZ3TAiqwipiuzrk5fQ4FTvCKbnUC3KhSgWeNn37O9aMR&organizationId=103570&apiVersion=1.0&stockItemId=6950453&resolution=180p&searchId=be6209c5-7785-413f-90d3-d1897d566766&searchPageId=11475d0c-e330-4a29-8b7a-ac39c065ad71#gliadriver=StoryBlocksVideoZH&key=6950453",
+                "url": "https://dm0qx8t0i9gc9.cloudfront.net/watermarks/video/BrltVHefQjiwahyhy/videoblocks-palm-trees-blow-and-sway-from-a-strong-ocean-wind_hfvqxwgezx__89ee3de169f5b75bd19ff6d9f16ca864__P360.mp4?type=preview&origin=VIDEOBLOCKS&timestamp_ms=1591723531148&publicKey=xC4NP5XgEfQOXGGzdxlHGZ3TAiqwipiuzrk5fQ4FTvCKbnUC3KhSgWeNn37O9aMR&organizationId=103570&apiVersion=1.0&stockItemId=6950453&resolution=180p&searchId=c1898ee4-22a3-4e5e-a237-8b1e45f2cba5&searchPageId=b04dd855-081d-4e2a-aa53-c874c8f810d3#gliadriver=StoryBlocksVideoZH&key=6950453",
                 "source": ""
             },
             "headline": "",
-            "title": "\u5f37\u5f37\u803d\u7f8e \u597d\u7b11 \u7e3d\u88c1",
-            "keywords": "\u5f37\u5f37\u803d\u7f8e \u597d\u7b11 \u7e3d\u88c1.",
-            "focal_x": 904,
+            "title": "強強耽美 好笑 總裁",
+            "keywords": "ALL:強強耽美 好笑 總裁.|QUERY:強強耽美 好笑 總裁.",
+            "focal_x": 956,
             "focal_y": 540,
-            "layout": "NORMAL"
+            "layout": "QUOTE"
         }
     ]
 }
