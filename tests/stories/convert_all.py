@@ -5,12 +5,15 @@ import random
 
 
 def samples():
-    return glob.glob("./tests/stories/*/*.json")
+    workdir = os.path.dirname(__file__)
+    return glob.glob(f"{workdir}/*/*.json")
 
 
 def load(ifilename):
     with open(ifilename) as ifile:
         data = json.load(ifile)
+
+        # rewrite layout to easier test
 
         layout = None
         for i, page in enumerate(data["pages"]):
@@ -54,12 +57,18 @@ def convert():
 
 
 def data():
-    cache = {}
     for ifilename in samples():
         with open(ifilename) as ifile:
-            cache[ifilename] = json.load(ifile)
+            content = json.load(ifile)
 
-    return data
+            for i, page in enumerate(content.pop("pages")):
+                x = dict(page)
+                x.update(content)
+                x["filepath"] = ifilename
+                x["filename"] = os.path.basename(ifilename)
+                x["index"] = i
+
+                yield x
 
 
 if __name__ == "__main__":
