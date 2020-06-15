@@ -14,9 +14,23 @@
  * limitations under the License.
  */
 
-export { default as MyStoriesView } from './myStories';
-export { default as ExploreTemplatesView } from './exploreTemplates';
-export { default as TemplateDetailsView } from './templateDetails';
-export { default as SavedTemplatesView } from './savedTemplates';
-export { default as StoryAnimTool } from './storyAnimTool';
-export { default as CreateStory } from './createStory';
+/**
+ * WordPress dependencies
+ */
+import { __ } from '@wordpress/i18n';
+
+/**
+ * Internal dependencies
+ */
+import { PageHeading } from '../../shared';
+
+function Header() {
+  return (
+    <PageHeading
+      showTypeahead={false}
+      defaultTitle={__('Create New Story', 'web-stories')}
+    />
+  );
+}
+
+export default Header;

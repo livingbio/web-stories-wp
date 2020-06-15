@@ -39,6 +39,7 @@ import {
   ExploreTemplatesView,
   SavedTemplatesView,
   StoryAnimTool,
+  CreateStory,
 } from './views';
 
 const AppContent = () => {
@@ -81,6 +82,7 @@ const AppContent = () => {
           path={APP_ROUTES.STORY_ANIM_TOOL}
           component={<StoryAnimTool />}
         />
+        <Route path={APP_ROUTES.CREATE_STORY} component={<CreateStory />} />
       </PageContent>
     </AppFrame>
   );

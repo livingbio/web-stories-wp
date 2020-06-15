@@ -13,10 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+function Content() {
+  return <h2>{'this is content'}</h2>;
+}
 
-export { default as MyStoriesView } from './myStories';
-export { default as ExploreTemplatesView } from './exploreTemplates';
-export { default as TemplateDetailsView } from './templateDetails';
-export { default as SavedTemplatesView } from './savedTemplates';
-export { default as StoryAnimTool } from './storyAnimTool';
-export { default as CreateStory } from './createStory';
+export default Content;

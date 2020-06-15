@@ -14,9 +14,21 @@
  * limitations under the License.
  */
 
-export { default as MyStoriesView } from './myStories';
-export { default as ExploreTemplatesView } from './exploreTemplates';
-export { default as TemplateDetailsView } from './templateDetails';
-export { default as SavedTemplatesView } from './savedTemplates';
-export { default as StoryAnimTool } from './storyAnimTool';
-export { default as CreateStory } from './createStory';
+/**
+ * Internal dependencies
+ */
+import { Layout } from '../../../components';
+
+import Header from './header';
+import Content from './content';
+
+function CreateStory() {
+  return (
+    <Layout.Provider>
+      <Header />
+      <Content />
+    </Layout.Provider>
+  );
+}
+
+export default CreateStory;
