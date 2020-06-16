@@ -35,21 +35,37 @@ class Cron
 	public static function refresh()
 	{
 		// call gliastudio list api
-		// update 
+		// update
 		$response = file_get_contents("http://gstudio.gliacloud.com/api/stories/?username=gliacloud");
 		$result = json_decode($response, true);
 
 		foreach ($result["payload"] as $story) {
 			if ($story["status"] == "DONE") {
 				$tmpfile = tempnam("/tmp");
+				$tmpjson = tempnam("/tmp");
+				$tmphtml = tempnam("/tmp");
+
 				$handle = fopen($tmpfile, "w");
 				fwrite($handle, json_encode(($story)));
-
-				exec("npm run workflow:aiconvert -- ${tmpfile} template.json {ofilename}.json {ofilename}.html");
-
 				fclose($handle);
-				unlink($tmpfile);
-				// check if story has store to db
+
+				exec("npm run workflow:aiconvert -- ${tmpfile} template.json ${tmpjson} ${tmphtml}");
+
+				file_get_contents($tmpjson);
+				file_get_contents($tmphtml);
+
+				// update post via api
+				$request = new WP_REST_Request( 'POST', '/wp/v2/web-story' );
+				$request->set_query_params( [
+					'content'=> $tmphtml,
+					"pages"=>$tmpjson["pages"],
+					'status'=>"draft",
+					"story_data"=>$tmpjson
+				 ] );
+				$response = rest_do_request( $request );
+				$server = rest_get_server();
+				$data = $server->response_to_data( $response, false );
+				$json = wp_json_encode( $data );
 			}
 		}
 	}
