@@ -11,4 +11,5 @@ node_modules
 /build
 /bin/local-env/data
 /bin/build/*/**
+phpcs.xml
 phpunit.xml
