@@ -18,23 +18,40 @@
  * WordPress dependencies
  */
 import { __ } from '@wordpress/i18n';
-
+/**
+ * External dependencies
+ */
+import styled from 'styled-components';
+import PropTypes from 'prop-types';
 /**
  * Internal dependencies
  */
-import { Layout } from '../../../../components';
-import { PageHeading } from '../../shared';
+import { Layout } from '../../../../../components';
+import { PageHeading } from '../../../shared';
 
-function Header() {
+const CancelButton = styled.button`
+  position: absolute;
+  left: 20px;
+  top: 0;
+`;
+
+function Header({ onCancel }) {
   return (
     <Layout.Squishable>
       <PageHeading
+        centerContent
+        defaultTitle={__('Choose a Template', 'web-stories')}
         stories={[]}
-        showTypeahead={false}
-        defaultTitle={__('Create New Story', 'web-stories')}
-      />
+        handleTypeaheadChange={() => {}}
+      >
+        <CancelButton onClick={onCancel}>{'Back'}</CancelButton>
+      </PageHeading>
     </Layout.Squishable>
   );
 }
+
+Header.propTypes = {
+  onCancel: PropTypes.func,
+};
 
 export default Header;

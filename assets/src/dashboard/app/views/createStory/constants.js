@@ -13,8 +13,5 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-function Content() {
-  return <h2>{'this is content'}</h2>;
-}
-
-export default Content;
+export const VIEW_INDEX = 'index';
+export const VIEW_TEMPLATE = 'template';

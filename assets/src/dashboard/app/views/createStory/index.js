@@ -13,21 +13,53 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
+/**
+ * External dependencies
+ */
+import { isUri as isValidUrl } from 'valid-url';
+import { useState, useCallback } from 'react';
 /**
  * Internal dependencies
  */
-import { Layout } from '../../../components';
-
-import Header from './header';
-import Content from './content';
+import { VIEW_INDEX, VIEW_TEMPLATE } from './constants';
+import IndexView from './indexView';
+import TemplateView from './templateView';
 
 function CreateStory() {
+  const [view, setView] = useState(VIEW_INDEX);
+  const [articleURL, setArticleURL] = useState('');
+
+  const onArticleURLChange = useCallback(
+    (value) => {
+      setArticleURL(value);
+
+      if (isValidUrl(articleURL)) {
+        setView(VIEW_TEMPLATE);
+      }
+    },
+    [articleURL]
+  );
+
+  const onTemplateSelect = (/*payload*/) => {
+    setView(VIEW_INDEX);
+  };
+
+  const onTemplateCancel = () => {
+    setView(VIEW_INDEX);
+  };
+
   return (
-    <Layout.Provider>
-      <Header />
-      <Content />
-    </Layout.Provider>
+    <>
+      {view === VIEW_INDEX && (
+        <IndexView
+          articleURL={articleURL}
+          onArticleURLChange={onArticleURLChange}
+        />
+      )}
+      {view === VIEW_TEMPLATE && (
+        <TemplateView onSelect={onTemplateSelect} onCancel={onTemplateCancel} />
+      )}
+    </>
   );
 }
 
