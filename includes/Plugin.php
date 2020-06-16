@@ -40,63 +40,65 @@ use WP_Post;
  */
 
 
-class Plugin {
+class Plugin
+{
 
 	/**
 	 * Initialize plugin functionality.
 	 *
 	 * @return void
 	 */
-	public function register() {
-		add_action( 'init', [ Media::class, 'init' ], 9 );
-		add_action( 'init', [ Story_Post_Type::class, 'init' ] );
-		add_action( 'init', [ Template_Post_Type::class, 'init' ] );
+	public function register()
+	{
+		add_action('init', [Media::class, 'init'], 9);
+		add_action('init', [Story_Post_Type::class, 'init']);
+		add_action('init', [Template_Post_Type::class, 'init']);
 
 		// REST API endpoints.
 		// High priority so it runs after create_initial_rest_routes().
-		add_action( 'rest_api_init', [ $this, 'register_rest_routes' ], 100 );
+		add_action('rest_api_init', [$this, 'register_rest_routes'], 100);
 
 		// Dashboard.
 		$dashboard = new Dashboard();
-		add_action( 'init', [ $dashboard, 'init' ] );
+		add_action('init', [$dashboard, 'init']);
 
 		// Admin-related functionality.
 		$admin = new Admin();
-		add_action( 'admin_init', [ $admin, 'init' ] );
+		add_action('admin_init', [$admin, 'init']);
 
 		// Gutenberg Blocks.
 		$embed_block = new Embed_Block();
-		add_action( 'init', [ $embed_block, 'init' ] );
+		add_action('init', [$embed_block, 'init']);
 
 		// Frontend.
 		$discovery = new Discovery();
-		add_action( 'init', [ $discovery, 'init' ] );
+		add_action('init', [$discovery, 'init']);
 
-		add_filter( 'googlesitekit_amp_gtag_opt', [ $this, 'filter_site_kit_gtag_opt' ] );
+		add_filter('googlesitekit_amp_gtag_opt', [$this, 'filter_site_kit_gtag_opt']);
 
 		// Cron Job
-		add_filter( 'cron_schedules', [ $this, 'register_cron_interval' ] );
-		if ( ! wp_next_scheduled( 'my_schedule_hook' ) ) {
-			error_log( 'Install hook' );
-			wp_schedule_event( time(), '1min', 'my_schedule_hook' );
+		add_filter('cron_schedules', [$this, 'register_cron_interval']);
+		if (!wp_next_scheduled('my_schedule_hook')) {
+			wp_schedule_event(time(), '1min', 'my_schedule_hook');
 		}
-		add_action( 'my_schedule_hook', [ Cron::class, 'refresh' ] );
+		add_action('my_schedule_hook', [Cron::class, 'refresh']);
 	}
 
-	public function register_cron_interval( $schedules ) {
-		if ( ! isset( $schedules['5min'] ) ) {
+	public function register_cron_interval($schedules)
+	{
+		if (!isset($schedules['5min'])) {
 			$schedules['5min'] = [
 				'interval' => 5 * 60,
 				'display'  => 'Once every 5 minutes',
 			];
 		}
-		if ( ! isset( $schedules['30min'] ) ) {
+		if (!isset($schedules['30min'])) {
 			$schedules['30min'] = [
 				'interval' => 30 * 60,
 				'display'  => 'Once every 30 minutes',
 			];
 		}
-		if ( ! isset( $schedules['1min'] ) ) {
+		if (!isset($schedules['1min'])) {
 			$schedules['1min'] = [
 				'interval' => 60,
 				'display'  => 'Once every 1 minutes',
@@ -110,7 +112,8 @@ class Plugin {
 	 *
 	 * @return void
 	 */
-	public function register_rest_routes() {
+	public function register_rest_routes()
+	{
 		$fonts_controller = new Fonts_Controller();
 		$fonts_controller->register_routes();
 
@@ -120,10 +123,10 @@ class Plugin {
 		$embed_controller = new Embed_Controller();
 		$embed_controller->register_routes();
 
-		$templates_autosaves = new Stories_Autosaves_Controller( Template_Post_Type::POST_TYPE_SLUG );
+		$templates_autosaves = new Stories_Autosaves_Controller(Template_Post_Type::POST_TYPE_SLUG);
 		$templates_autosaves->register_routes();
 
-		$stories_autosaves = new Stories_Autosaves_Controller( Story_Post_Type::POST_TYPE_SLUG );
+		$stories_autosaves = new Stories_Autosaves_Controller(Story_Post_Type::POST_TYPE_SLUG);
 		$stories_autosaves->register_routes();
 	}
 
@@ -136,24 +139,25 @@ class Plugin {
 	 * @param array $gtag_opt Array of gtag configuration options.
 	 * @return array Modified configuration options.
 	 */
-	public function filter_site_kit_gtag_opt( $gtag_opt ) {
-		if ( ! is_singular( Story_Post_Type::POST_TYPE_SLUG ) ) {
+	public function filter_site_kit_gtag_opt($gtag_opt)
+	{
+		if (!is_singular(Story_Post_Type::POST_TYPE_SLUG)) {
 			return $gtag_opt;
 		}
 
 		$post = get_post();
 
-		if ( ! $post instanceof WP_Post ) {
+		if (!$post instanceof WP_Post) {
 			return $gtag_opt;
 		}
 
-		$title       = get_the_title( $post );
+		$title       = get_the_title($post);
 		$story_id    = $post->ID;
 		$tracking_id = $gtag_opt['vars']['gtag_id'];
 
 		$gtag_opt['triggers'] = $gtag_opt['triggers'] ?: [];
 
-		if ( ! isset( $gtag_opt['triggers']['storyProgress'] ) ) {
+		if (!isset($gtag_opt['triggers']['storyProgress'])) {
 			$gtag_opt['triggers']['storyProgress'] = [
 				'on'   => 'story-page-visible',
 				'vars' => [
@@ -168,7 +172,7 @@ class Plugin {
 			];
 		}
 
-		if ( ! isset( $gtag_opt['triggers']['storyEnd'] ) ) {
+		if (!isset($gtag_opt['triggers']['storyEnd'])) {
 			$gtag_opt['triggers']['storyEnd'] = [
 				'on'   => 'story-last-page-visible',
 				'vars' => [

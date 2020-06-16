@@ -29,9 +29,28 @@
 
 namespace Google\Web_Stories;
 
-class Cron {
+class Cron
+{
 
-	public static function refresh() {
-		error_log( 'Your message here' );
+	public static function refresh()
+	{
+		// call gliastudio list api
+		// update 
+		$response = file_get_contents("http://gstudio.gliacloud.com/api/stories/?username=gliacloud");
+		$result = json_decode($response, true);
+
+		foreach ($result["payload"] as $story) {
+			if ($story["status"] == "DONE") {
+				$tmpfile = tempnam("/tmp");
+				$handle = fopen($tmpfile, "w");
+				fwrite($handle, json_encode(($story)));
+
+				exec("npm run workflow:aiconvert -- ${tmpfile} template.json {ofilename}.json {ofilename}.html");
+
+				fclose($handle);
+				unlink($tmpfile);
+				// check if story has store to db
+			}
+		}
 	}
 }
