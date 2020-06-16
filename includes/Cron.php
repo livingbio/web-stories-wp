@@ -28,6 +28,7 @@
  */
 
 namespace Google\Web_Stories;
+use WP_REST_Request;
 
 class Cron
 {
@@ -36,14 +37,18 @@ class Cron
 	{
 		// call gliastudio list api
 		// update
-		$response = file_get_contents("http://gstudio.gliacloud.com/api/stories/?username=gliacloud");
+
+		$response = file_get_contents(dirname(dirname(__FILE__))."/tests/stories/fake_data.json");
+		// $response = file_get_contents("http://gstudio.gliacloud.com/api/stories/?username=gliacloud");
 		$result = json_decode($response, true);
 
 		foreach ($result["payload"] as $story) {
 			if ($story["status"] == "DONE") {
-				$tmpfile = tempnam("/tmp");
-				$tmpjson = tempnam("/tmp");
-				$tmphtml = tempnam("/tmp");
+				// TODO: check if story is exist already
+
+				$tmpfile = tempnam("/tmp", "glia");
+				$tmpjson = tempnam("/tmp", "glia");
+				$tmphtml = tempnam("/tmp", "glia");
 
 				$handle = fopen($tmpfile, "w");
 				fwrite($handle, json_encode(($story)));
@@ -62,6 +67,7 @@ class Cron
 					'status'=>"draft",
 					"story_data"=>$tmpjson
 				 ] );
+
 				$response = rest_do_request( $request );
 				$server = rest_get_server();
 				$data = $server->response_to_data( $response, false );
