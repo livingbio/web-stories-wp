@@ -17,7 +17,7 @@
 /**
  * External dependencies
  */
-import { useCallback } from 'react';
+import { useState, useCallback } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
@@ -59,23 +59,30 @@ const CreateFromURL = styled.div`
 //   margin-top: 20px;
 // `;
 
-function IndexView({ articleURL, onArticleURLChange }) {
+function IndexView({ articleURL, onArticleURLUpdate }) {
+  const [pasted, setPasted] = useState(false);
   const onArticleURLKeyUp = useCallback(
     ({ keyCode, target }) => {
       if (keyCode && keyCode === 13 && target.value) {
-        onArticleURLChange(target.value);
+        onArticleURLUpdate(target.value);
       }
     },
-    [onArticleURLChange]
+    [onArticleURLUpdate]
   );
 
-  const onArticleURLPaste = useCallback(
-    (e) => {
-      const value = e.clipboardData.getData('Text');
-      value && onArticleURLChange(value);
+  const onArticleURLChange = useCallback(
+    ({ target }) => {
+      if (pasted && target.value) {
+        onArticleURLUpdate(target.value);
+      }
+      setPasted(false);
     },
-    [onArticleURLChange]
+    [pasted, onArticleURLUpdate]
   );
+
+  const onArticleURLPaste = useCallback(() => {
+    setPasted(true);
+  }, [setPasted]);
 
   return (
     <Layout.Provider>
@@ -89,6 +96,7 @@ function IndexView({ articleURL, onArticleURLChange }) {
                 defaultValue={articleURL}
                 onKeyUp={onArticleURLKeyUp}
                 onPaste={onArticleURLPaste}
+                onChange={onArticleURLChange}
               />
             </CreateFromURL>
             {/* <CreateFromContext>
@@ -106,7 +114,7 @@ function IndexView({ articleURL, onArticleURLChange }) {
 
 IndexView.propTypes = {
   articleURL: PropTypes.string,
-  onArticleURLChange: PropTypes.func.isRequired,
+  onArticleURLUpdate: PropTypes.func.isRequired,
 };
 
 export default IndexView;

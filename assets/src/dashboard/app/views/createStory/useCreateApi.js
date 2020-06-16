@@ -18,54 +18,67 @@
  * External dependencies
  */
 import { useReducer, useCallback, useMemo } from 'react';
-
 /**
- * Internal dependencies
+ * WordPress dependencies
  */
-// import dataAdapter from '../../api/wpAdapter';
-import { queues } from './mock';
+// import apiFetch from '@wordpress/api-fetch';
 
 const TYPES = {
-  FETCH_QUEUES: 'fetchQueues',
+  CREATE_STORY: 'createStory',
 };
 
-const defaultState = [];
+const defaultState = {
+  story: '',
+};
 
 function apiReducer(state, action) {
   switch (action.type) {
-    case TYPES.FETCH_QUEUES:
-      return action.payload;
+    case TYPES.CREATE_STORY:
+      return {
+        ...state,
+        story: action.payload,
+      };
     default:
       return state;
   }
 }
 
-function useQueueApi() {
+function useCreateApi() {
   const [state, dispath] = useReducer(apiReducer, defaultState);
 
-  // const fetchQueues = useCallback(async () => {
-  const fetchQueues = useCallback(() => {
+  // eslint-disable-next-line require-await
+  const createStory = useCallback(async ({ articleURL, templateId }) => {
+    // eslint-disable-next-line no-console
+    console.log('createStory -> articleURL', articleURL, templateId);
     try {
-      // const response = await dataAdapter.get();
+      // const response = await apiFetch({
+      //   url: 'https://reqres.in/api/users',
+      //   method: 'POST',
+      //   data: {
+      //     name: 'morpheus',
+      //     job: 'leader',
+      //   },
+      // });
+      // console.log('createStory -> response', response);
 
       dispath({
-        type: TYPES.FETCH_QUEUES,
-        payload: queues,
+        type: TYPES.CREATE_STORY,
+        payload: 'OK',
       });
     } catch (error) {
       // eslint-disable-next-line no-console
-      console.log('fetchQueues -> error', error);
+      console.log('useCreateApi -> error', error);
     }
   }, []);
 
   const api = useMemo(
     () => ({
-      fetchQueues,
+      createStory,
     }),
-    [fetchQueues]
+    [createStory]
   );
 
-  return { queues: state, api };
+  return { state, api };
 }
 
-export default useQueueApi;
+export default useCreateApi;

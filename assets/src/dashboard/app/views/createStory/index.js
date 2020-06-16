@@ -17,43 +17,56 @@
  * External dependencies
  */
 import { isUri as isValidUrl } from 'valid-url';
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 /**
  * Internal dependencies
  */
 import { VIEW_INDEX, VIEW_TEMPLATE } from './constants';
+import useCreateApi from './useCreateApi';
 import IndexView from './indexView';
 import TemplateView from './templateView';
 
 function CreateStory() {
   const [view, setView] = useState(VIEW_INDEX);
   const [articleURL, setArticleURL] = useState('');
+  const [template, setTemplate] = useState();
+  const { state: apiState, api } = useCreateApi();
 
-  const onArticleURLChange = useCallback(
-    (value) => {
-      setArticleURL(value);
+  const onArticleURLUpdate = useCallback((value) => {
+    setArticleURL(value);
 
-      if (isValidUrl(articleURL)) {
-        setView(VIEW_TEMPLATE);
-      }
-    },
-    [articleURL]
-  );
+    if (isValidUrl(value)) {
+      setView(VIEW_TEMPLATE);
+    }
+  }, []);
 
-  const onTemplateSelect = (/*payload*/) => {
-    setView(VIEW_INDEX);
+  const onTemplateSelect = (payload) => {
+    setTemplate(payload);
   };
 
   const onTemplateCancel = () => {
     setView(VIEW_INDEX);
   };
 
+  useEffect(() => {
+    async function createStory() {
+      await api.createStory({
+        articleURL,
+        templateId: template.id,
+      });
+    }
+
+    if (articleURL && template) {
+      createStory();
+    }
+  }, [articleURL, template, api, apiState]);
+
   return (
     <>
       {view === VIEW_INDEX && (
         <IndexView
           articleURL={articleURL}
-          onArticleURLChange={onArticleURLChange}
+          onArticleURLUpdate={onArticleURLUpdate}
         />
       )}
       {view === VIEW_TEMPLATE && (
