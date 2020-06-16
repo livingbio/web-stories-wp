@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Main Plugin class.
  *
@@ -37,7 +38,10 @@ use WP_Post;
 /**
  * Plugin class.
  */
+
+
 class Plugin {
+
 	/**
 	 * Initialize plugin functionality.
 	 *
@@ -69,6 +73,36 @@ class Plugin {
 		add_action( 'init', [ $discovery, 'init' ] );
 
 		add_filter( 'googlesitekit_amp_gtag_opt', [ $this, 'filter_site_kit_gtag_opt' ] );
+
+		// Cron Job
+		add_filter( 'cron_schedules', [ $this, 'register_cron_interval' ] );
+		if ( ! wp_next_scheduled( 'my_schedule_hook' ) ) {
+			error_log( 'Install hook' );
+			wp_schedule_event( time(), '1min', 'my_schedule_hook' );
+		}
+		add_action( 'my_schedule_hook', [ Cron::class, 'refresh' ] );
+	}
+
+	public function register_cron_interval( $schedules ) {
+		if ( ! isset( $schedules['5min'] ) ) {
+			$schedules['5min'] = [
+				'interval' => 5 * 60,
+				'display'  => 'Once every 5 minutes',
+			];
+		}
+		if ( ! isset( $schedules['30min'] ) ) {
+			$schedules['30min'] = [
+				'interval' => 30 * 60,
+				'display'  => 'Once every 30 minutes',
+			];
+		}
+		if ( ! isset( $schedules['1min'] ) ) {
+			$schedules['1min'] = [
+				'interval' => 60,
+				'display'  => 'Once every 1 minutes',
+			];
+		}
+		return $schedules;
 	}
 
 	/**
