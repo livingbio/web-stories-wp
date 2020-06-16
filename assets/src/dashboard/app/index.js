@@ -40,6 +40,7 @@ import {
   SavedTemplatesView,
   StoryAnimTool,
   CreateStory,
+  AIStoryQueue,
 } from './views';
 
 const AppContent = () => {
@@ -83,6 +84,7 @@ const AppContent = () => {
           component={<StoryAnimTool />}
         />
         <Route path={APP_ROUTES.CREATE_STORY} component={<CreateStory />} />
+        <Route path={APP_ROUTES.AI_STORY_QUEUE} component={<AIStoryQueue />} />
       </PageContent>
     </AppFrame>
   );

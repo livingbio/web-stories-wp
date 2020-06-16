@@ -14,10 +14,22 @@
  * limitations under the License.
  */
 
-export { default as MyStoriesView } from './myStories';
-export { default as ExploreTemplatesView } from './exploreTemplates';
-export { default as TemplateDetailsView } from './templateDetails';
-export { default as SavedTemplatesView } from './savedTemplates';
-export { default as StoryAnimTool } from './storyAnimTool';
-export { default as CreateStory } from './createStory';
-export { default as AIStoryQueue } from './aiStoryQueue';
+/**
+ * External dependencies
+ */
+import styled from 'styled-components';
+
+const StyledEmptyView = styled.div`
+  padding: 16px;
+  text-align: center;
+`;
+
+function EmptyView() {
+  return (
+    <StyledEmptyView>
+      <h2>{'Empty Queue'}</h2>
+    </StyledEmptyView>
+  );
+}
+
+export default EmptyView;
