@@ -46,26 +46,13 @@ class Cron
 			if ($story["status"] == "DONE") {
 				// TODO: check if story is exist already
 
-				$tmpfile = tempnam("/tmp", "glia");
-				$tmpjson = tempnam("/tmp", "glia");
-				$tmphtml = tempnam("/tmp", "glia");
-
-				$handle = fopen($tmpfile, "w");
-				fwrite($handle, json_encode(($story)));
-				fclose($handle);
-
-				exec("npm run workflow:aiconvert -- ${tmpfile} template.json ${tmpjson} ${tmphtml}");
-
-				file_get_contents($tmpjson);
-				file_get_contents($tmphtml);
-
 				// update post via api
 				$request = new WP_REST_Request( 'POST', '/wp/v2/web-story' );
 				$request->set_query_params( [
-					'content'=> $tmphtml,
-					"pages"=>$tmpjson["pages"],
+					'content'=> $story["extra"]["content"],
+					"pages"=>$story["extra"]["story_data"],
 					'status'=>"draft",
-					"story_data"=>$tmpjson
+					"story_data"=>$story["extra"]["story_data"]
 				 ] );
 
 				$response = rest_do_request( $request );
