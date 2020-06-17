@@ -8,39 +8,40 @@ from flask import Flask, jsonify, request
 app = Flask(__name__)
 
 
-def load(ifilename):
-    with open(ifilename) as ifile:
-        data = json.load(ifile)
+def load(data):
+    data = json.loads(data)
+    layout = None
+    for i, page in enumerate(data["pages"]):
+        if i == 0:
+            layout = "COVER"
 
-        layout = None
-        for i, page in enumerate(data["pages"]):
-            if i == 0:
-                layout = "COVER"
+        elif page["headline"] and page["title"]:
+            layout = "NORMAL"
 
-            elif page["headline"] and page["title"]:
-                layout = "NORMAL"
-
-            elif not page["headline"]:
-                if len(page["title"]) < 50:
-                    layout = "QUOTE"
-                else:
-                    layout = random.choice(["FOCUS", "NORMAL"])
+        elif not page["headline"]:
+            if len(page["title"]) < 50:
+                layout = "QUOTE"
             else:
-                raise NotImplementedError()
+                layout = random.choice(["FOCUS", "NORMAL"])
+        else:
+            raise NotImplementedError()
 
-            page["layout"] = layout
+        page["layout"] = layout
 
-        return data
+    return data
+
+
+FOO_DATA = open("./tests/stories/full/3.json").read()
 
 
 @app.route("/", methods=["POST", "GET"])
 def hello_world():
-    data = request.values.get("data", open("./tests/stories/full/3.json").read())
+    data = load(request.values.get("data", FOO_DATA))
 
     with NamedTemporaryFile(
         "w"
     ) as ifile, NamedTemporaryFile() as ofile_json, NamedTemporaryFile() as ofile_html:
-        ifile.write(data)
+        json.dump(data, ifile)
         ifile.flush()
 
         os.system(
