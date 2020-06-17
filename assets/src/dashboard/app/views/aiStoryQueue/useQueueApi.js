@@ -44,10 +44,12 @@ function useQueueApi() {
 
   const fetchQueues = useCallback(async () => {
     try {
-      // const response = queues;
+      const host = 'https://gstudio.gliacloud.com';
+      // const host = 'http://172.16.6.233:8001';
+
       const response = await axios({
         method: 'GET',
-        url: `http://172.16.6.233:8001/api/stories/?cb=${Date.now()}`,
+        url: `${host}/api/stories/?cb=${Date.now()}`,
       });
 
       dispath({

@@ -49,8 +49,11 @@ function useCreateApi() {
 
   const createStory = useCallback(async ({ articleURL, templateId }) => {
     try {
+      const host = 'https://gstudio.gliacloud.com';
+      // const host = 'http://172.16.6.233:8001';
+
       const response = await axios({
-        url: 'http://172.16.6.233:8001/api/url-to-story/',
+        url: `${host}/api/url-to-story/`,
         method: 'POST',
         data: {
           article_url: articleURL,
