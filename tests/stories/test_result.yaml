@@ -1,291 +1,412 @@
-general:
--   file: ''
-    reason: summary的第一頁常常會重複標題
--   file: ''
-    reason: NORMAL的字型太小，看不清楚
--   file: ''
-    reason: NORMAL headline有字數限制
--   file: ''
-    reason: focal point不只要放中間，而且要找出精確位置
--   file: ''
-    reason: 海報類、網站截圖的 focal point 不容易找對
--   file: ''
-    reason: 143.json輸出是否有問題?
-wrong_focal_point:
--   file: 11.html
-    pages:
-    - 3
--   file: 44.html
-    pages:
-    - 0
-    - 1
--   file: 49.html
-    pages:
-    - 1
-    - 2
-    - 5
--   file: 67.html
-    pages:
-    - 0
-    - 3
--   file: 73.html
-    pages:
-    - 17
-    - 18
-    - 19
--   file: 75.html
-    pages:
-    - 3
-    - 4
-    - 5
--   file: 89.html
-    pages:
-    - 0
--   file: 94.html
-    pages:
-    - 3
--   file: 118.html
-    pages:
-    - 0
-    - 10
--   file: 119.html
-    pages:
-    - 7
--   file: 128.html
-    pages:
-    - 3
-    - 10
--   file: 129.html
-    pages:
-    - 1
-    - 5
-    - 6
--   file: 139.html
-    pages:
-    - 1
-    - 2
--   file: 153.html
-    pages:
-    - 2
--   file: 157.html
-    pages:
-    - 0
-    - 1
--   file: 160.html
-    pages:
-    - 0
-    - 1
--   file: 161.html
-    pages:
-    - 1
-    - 2
-    - 3
-    - 4
-wrong_gmediasearch:
--   file: 9.html
-    pages:
-    - 3
-    - 5
-    - 8
--   file: 12.html
-    pages:
-    - 7
-    - 9
-    - 10
--   file: 13.html
-    pages:
-    - 3
-    - 4
-    - 5
-    - 8
--   file: 15.html
-    pages:
-    - 3
-    - 4
-    - 5
-    - 6
-    - 7
--   file: 19.html
-    pages:
-    - 1
--   file: 21.html
-    pages:
-    - 4
-    - 5
--   file: 25.html
-    pages:
-    - 3
-    - 4
-    - 5
-    - 6
-    - 7
--   file: 26.html
-    pages:
-    - 3
-    - 4
--   file: 33.html
-    pages:
-    - 5
-    - 6
--   file: 42.html
-    pages:
-    - 5
-    - 6
--   file: 43.html
-    pages:
-    - 5
--   file: 45.html
-    pages:
-    - 2
-    - 9
--   file: 67.html
-    pages:
-    - 1
-    - 2
-    - 3
-    - 4
-    - 5
-    - 6
-    - 7
-    - 8
-    - 9
--   file: 79.html
-    pages:
-    - 1
--   file: 88.html
-    pages:
-    - 2
-    - 5
--   file: 102.html
-    pages:
-    - 7
-    - 9
--   file: 106.html
-    pages:
-    - 4
-    - 6
--   file: 107.html
-    pages:
-    - 5
--   file: 113.html
-    pages:
-    - 6
--   file: 146.html
-    pages:
-    - 3
--   file: 153.html
-    pages:
-    - 5
-wrong_gnlp_match:
--   file: 34.html
-    pages:
-    - 4
-    - 5
--   file: 40.html
-    pages:
-    - 1
-    - 3
-    - 4
-    - 5
-    - 6
--   file: 110.html
-    pages:
-    - 8
-wrong_gnlp_summary:
--   file: 8.html
-    pages: []
--   file: 11.html
-    pages: []
--   file: 12.html
-    pages: []
--   file: 29.html
-    pages: []
--   file: 33.html
-    pages: []
--   file: 34.html
-    pages:
-    - 4
-    - 5
--   file: 37.html
-    pages:
-    - 1
--   file: 40.html
-    pages:
-    - 1
-    - 3
-    - 4
--   file: 43.html
-    pages: []
--   file: 68.html
-    pages: []
--   file: 71.html
-    pages: []
--   file: 73.html
-    pages: []
--   file: 74.html
-    pages: []
--   file: 75.html
-    pages: []
--   file: 89.html
-    pages:
-    - 1
-    - 2
--   file: 93.html
-    pages: []
--   file: 94.html
-    pages:
-    - 1
-    - 4
--   file: 104.html
-    pages:
-    - 0
-    - 1
-    - 3
-    - 4
--   file: 112.html
-    pages:
-    - 5
-    - 6
--   file: 113.html
-    pages:
-    - 2
-    - 4
-    - 7
--   file: 118.html
-    pages: []
--   file: 121.html
-    pages: []
--   file: 124.html
-    pages: []
--   file: 129.html
-    pages:
-    - 11
--   file: 133.html
-    pages: []
--   file: 141.html
-    pages:
-    - 1
--   file: 145.html
-    pages:
-    - 1
--   file: 148.html
-    pages: []
--   file: 156.html
-    pages: []
--   file: 159.html
-    pages: []
--   file: 162.html
-    pages:
-    - 1
-    - 21
-    - 22
-    - 23
-    - 24
-    - 25
-    - 26
--   file: 163.html
-    pages:
-    - 6
-    - 7
--   file: 166.html
-    pages: []
+-   desc1: ============================================================
+    desc2: 一般性的錯誤
+    desc3: ============================================================
+    files:
+    -   file: ''
+        reason: NORMAL的字型太小，看不清楚
+    -   file: ''
+        reason: NORMAL headline有字數限制
+    -   file: ''
+        reason: focal point不只要放中間，而且要找出精確位置
+    -   file: ''
+        reason: 海報類、網站截圖的 focal point 不容易找對
+-   desc1: ============================================================
+    desc2: 文章不適合作影片
+    desc3: ============================================================
+    files:
+    -   file: 29.html
+        reason: 漫畫型式，不適合以文章內容為主的summary形式
+    -   file: 34.html
+        reason: 圖片內容是表格，不適合作影片
+    -   file: 37.html
+        reason: 整段都用逗號分隔，會造成句子太長
+    -   file: 40.html
+        reason: 圖片內容是表格，不適合作影片
+    -   file: 73.html
+        reason: 文章結構類似目錄，不適合作影片
+    -   file: 74.html
+        reason: 文章結構類似目錄，不適合作影片
+    -   file: 89.html
+        reason: 完全不通順的文章
+    -   file: 93.html
+        reason: 圖片內容是表格，不適合作影片
+    -   file: 94.html
+        reason: 網址錯誤，不是文章網址
+    -   file: 118.html
+        reason: 故事型的文章，不適合作summary，因為不小心漏掉一句就不通順了
+    -   file: 133.html
+        reason: 多個完全獨立的小段落放在一起
+    -   file: 141.html
+        reason: 圖片內容是表格，不適合作影片
+    -   file: 156.html
+        reason: 內容農場轉貼，原本多頁文章只有貼到第一頁
+    -   file: 166.html
+        pages: 文章不通順；圖片內容不適合作影片
+-   desc1: ============================================================
+    desc2: gparsed爬的結果錯誤
+    desc3: ============================================================
+    files:
+    -   file: 8.html
+        reason: 同一段落被img tag拆開，造成句子不通順
+    -   file: 12.html
+        reason: 沒有正確處理段落標題
+    -   file: 33.html
+        reason: 沒有正確處理段落標題；沒有正確排除延伸閱讀連結
+    -   file: 75.html
+        reason: 錯誤的標題(pinterest.com)及錯誤的內文(source:...)
+    -   file: 104.html
+        reason: 圖說和內文混在一起，很難分辨
+    -   file: 110.html
+        reason: 爬到推薦文章
+    -   file: 112.html
+        reason: 標題出現Advertisement
+    -   file: 113.html
+        reason: 內文出現「圖片來源：秒拍」
+    -   file: 148.html
+        reason: 沒有爬到內文
+    -   file: 159.html
+        reason: 銷售網址被截掉，造成句子不通順
+    -   file: 162.html
+        reason: 最後面相關連結應該刪除
+    -   file: 163.html
+        reason: 多頁式blog沒有正確爬文；網友留言以後應該刪除
+-   desc1: ============================================================
+    desc2: gnlp摘要結果錯誤
+    desc3: ============================================================
+    files:
+    -   file: 11.html
+        reason: 段落標題重複文章標題(fixed)；最後一段選句不夠好(wont fix)
+    -   file: 43.html
+        reason: 第一句選的不夠好(wont fix)
+    -   file: 68.html
+        reason: 選句很差(wont fix)
+    -   file: 71.html
+        reason: 同一個序列的句子，沒有同時被選中(fixed)
+    -   file: 121.html
+        reason: 段落的第一個句子，應該有較高優先權(fixed)
+    -   file: 124.html
+        reason: 句子過長，都是用逗號分隔(wont fix)
+    -   file: 129.html
+        pages:
+        - 11
+        reason: 對話的地方不好處理(wont fix)
+    -   file: 145.html
+        pages:
+        - 1
+        reason: 段落的第一個句子，應該有較高優先權(fixed)
+-   desc1: ============================================================
+    desc2: gmediasearch搜尋結果不適合
+    desc3: ============================================================
+    files:
+    -   file: 9.html
+        pages:
+        -   all_keywords: 共生共榮 社會主義一黨專政路線 新疆維吾爾及 中國 國進民退實質 國家計劃經濟 經濟模式
+            index: 3
+            query_keywords: 共生共榮
+            title: 不論是經濟模式上的國進民退實質宣告了重回社會主義一黨專政路線的國家計劃經濟，或是在國際局勢上一帶一路從新制度經濟學概念下的共生共榮轉為全球性的滲透收買，以至於對新疆維吾爾及香港問題的強硬態度，都正式宣告了中國已經跟過去不一樣。
+        -   all_keywords: 印太戰略 基本戰略 鄧小平 對抗意識 中國 民族主義 強權對抗
+            index: 5
+            query_keywords: 基本戰略
+            title: 而適逢中國內部對民族主義作為鞏固政權的剛性需求，印太戰略順利火上加油的激起中國的對抗意識，讓中國在涉外事務的基本戰略從鄧小平時代的韜光養晦，快速轉成強權對抗的思維模式。
+        -   all_keywords: 產業鏈價值鏈與生態圈
+            index: 8
+            query_keywords: 產業鏈價值鏈與生態圈
+            title: 首先是整個產業鏈價值鏈與生態圈的重整。
+    -   file: 12.html
+        pages:
+        -   all_keywords: 國發會 國發基金 彰銀 產業創新 金融創新
+            index: 7
+            query_keywords: 產業創新
+            title: '到底以產業創新為宗旨的國發基金花了40多億元、買了27萬多張彰銀，只是為了當財政部側翼、協助搶下彰銀經營權？
+
+                還是要推動金融創新？
+
+                還是想每年領股息？
+
+                國發會應該對外說明清楚。'
+        -   all_keywords: 彰銀 中華郵政 中華郵政總經理江瑞堂 信傳媒 股票投資
+            index: 9
+            query_keywords: 彰銀 中華郵政 中華郵政總經理江瑞堂 信傳媒 股票投資
+            title: 中華郵政總經理江瑞堂則是向《信傳媒》表示，是不是買在最高價現在還很難界定，以彰銀5日收盤價19.9元來比較，也許買的價格多出一塊、兩塊，但是股票投資是長期，中華郵政更看重未來彰銀的股利配息，長期經過配股配息之後，投資收益還是有可能高過於資金成本。
+        -   all_keywords: 中華郵政 汐止遠雄 觀察 不動產
+            index: 10
+            query_keywords: 中華郵政 汐止遠雄 觀察 不動產
+            title: 觀察近4年來中華郵政出手購置不動產的主要標的，其中，在2016年11月、12月中華郵政就以5.85億元買進南港軟體園區B棟9樓、3.96億元買下汐止遠雄「U-Town」7樓以及以4.3億元購入內湖長虹旗艦科技大樓3樓。
+    -   file: 13.html
+        pages:
+        -   all_keywords: 全安堂 太陽餅 太陽餅博物 館
+            index: 3
+            query_keywords: 全安堂 太陽餅 太陽餅博物 館
+            title: 想了解太陽餅的歷史與製作過程，可造訪全安堂「太陽餅博物 館」一探究竟。
+        -   all_keywords: 建築 太陽餅博物館
+            index: 4
+            query_keywords: 建築 太陽餅博物館
+            title: 「太陽餅博物館」的建築本身就是一件保存良好的百年歷史瑰寶，外觀是雄偉華麗的巴洛克建築立面，與許多台灣老式官方建築一樣都是「辰野式」風格。
+        -   all_keywords: 太陽餅博物館 太陽餅 太陽餅糕餅 魏清海 全安堂 博物館
+            index: 5
+            query_keywords: 太陽餅博物館 太陽餅 太陽餅糕餅 魏清海 全安堂 博物館
+            title: 而博物館前身「全安堂」最早作為藥鋪使用，後由太陽餅發明人「阿明師」魏清海老師傅在此將太陽餅發揚光大，經60年三代運營，現已改為全安堂「太陽餅博物館」，博物館內精心收藏太陽餅相關文物用具及互動影音媒體，在百年古蹟空間中展出台中最值得驕傲的太陽餅糕餅文化。
+        -   all_keywords: 伴手禮選擇 糕餅食品 彌月蛋糕 漢式喜餅 太陽餅 綠豆糕 老婆餅
+            index: 8
+            query_keywords: 伴手禮選擇 糕餅食品 彌月蛋糕 漢式喜餅 太陽餅 綠豆糕 老婆餅
+            title: 此外，店內的其他糕餅食品，如綠豆糕、漢式喜餅、彌月蛋糕、老婆餅、太陽餅等，都是最佳的伴手禮選擇。
+    -   file: 15.html
+        pages:
+        -   all_keywords: 小堅 父親 竹市 棒球 姊姊 棒球隊 鄭正鈐
+            index: 3
+            query_keywords: 小堅 父親 竹市 棒球 姊姊 棒球隊 鄭正鈐
+            title: 小堅的父親與姊姊今天在立委鄭正鈐的陪同下召開記者會，與小堅最親近的姊姊娓娓道來，指小堅從小個性開朗，對棒球深懷憧憬，去年7月在父親陪同下報考進入竹市某國中棒球隊，沒想到這卻是惡夢的開始。
+        -   all_keywords: 小堅 神經焦慮 小堅姊姊
+            index: 4
+            query_keywords: 小堅 神經焦慮 小堅姊姊
+            title: 整起事件從去年7月中一直持續到今年2月16日，小堅姊姊一次週末假期結束要帶小堅返校時，驚覺小堅從原本的個性開朗變成神經焦慮，並伴有換氣過度、無法呼吸的症狀，經詢問才知悉這些「不齒的行徑」，隨即跟校方反應。
+        -   all_keywords: 小堅 國中 小堅身心 新竹市 新竹縣 新學校 校方 校安通報
+            index: 5
+            query_keywords: 小堅 國中 小堅身心 新竹市 新竹縣 新學校 校方 校安通報
+            title: 因為對校方感到失望，且為了保護小堅，家屬們趕緊帶小堅從新竹市轉學去新竹縣，而新學校也立即發現小堅身心嚴重受創，趕緊予以輔導，同時向該所國中及上級教育機關發出「校安通報」。
+        -   all_keywords: 小堅 受害者 球員 性侵 暴力霸凌 霸凌者 受害家者
+            index: 6
+            query_keywords: 受害者
+            title: 受害家者並指出，不只是小堅這位受害者，至少還有其他2名球員也都遭遇性侵，至於暴力霸凌更是普遍，至少有9位以上霸凌者動不動就對球員暴力相向。
+        -   all_keywords: 該國中 受害家屬 校園通報系統 立委鄭正鈐
+            index: 7
+            query_keywords: 該國中 受害家屬 校園通報系統 立委鄭正鈐
+            title: 立委鄭正鈐表示，受害家屬2月18日到校反映，直到5月1日該國中才開性平會，時間長達近3個月，質疑校園通報系統是否出現問題？
+    -   file: 19.html
+        pages:
+        -   all_keywords: 長照居家看服員 台中副市長 副市長 林依瑩 長照居服員
+            index: 1
+            query_keywords: 長照居家看服員
+            title: 林依瑩，曾擔任台中副市長的她，現在是和平區達觀部落的「長照居家看服員」
+    -   file: 21.html
+        pages:
+        -   all_keywords: 改裝 豁免條款 貨物稅 加裝 貨物稅額
+            index: 4
+            query_keywords: 改裝
+            title: 官員表示，雖然改裝的貨物稅額看起來負擔很重，但函釋也訂定豁免條款，如果是依法令強制規定改裝或加裝車身設備或是車輛出廠後過一年後才進場改裝，全面免課貨物稅。
+        -   all_keywords: 貨物稅 變更車型 拆除骨架
+            index: 5
+            query_keywords: 貨物稅 變更車型 拆除骨架
+            title: 如果未拆除骨架，只是更換已銹蝕或是換座椅等，未重新換裝車身及變更車型，皆屬於維修範圍，同樣免課貨物稅。
+    -   file: 25.html
+        pages:
+        -   all_keywords: 模仿 模仿學習動作 擊球動作 優秀選手 直接模仿.
+            index: 3
+            query_keywords: 模仿 模仿學習動作 擊球動作 優秀選手 直接模仿.
+            title: 直接依照自己看到的，模仿學習動作，例如學習優秀選手的擊球動作，或是模仿他們在場上的戰術及配球。
+        -   all_keywords: 綜合 優秀球員 綜合模仿 行為 擊球動作 教練
+            index: 4
+            query_keywords: 綜合 優秀球員 綜合模仿 行為 擊球動作 教練
+            title: 綜合多次所見而形成自己的行為，例如我發現教練及大多數優秀球員的擊球動作都比較小且發力集中，所以我嘗試著修正自己。
+        -   all_keywords: 模仿 象徵模仿 模仿楷模 模仿優秀運動選手
+            index: 5
+            query_keywords: 模仿 象徵模仿 模仿楷模 模仿優秀運動選手
+            title: 模仿楷模的性格或行為所表現出來的樣子，例如模仿優秀運動選手漫長苦練的恆心與態度，或是模仿他們在場上即時連續失分也能毫不著急。
+        -   all_keywords: 優秀選手 抽象模仿 模仿抽象
+            index: 6
+            query_keywords: 優秀選手 抽象模仿 模仿抽象
+            title: 模仿抽象的原則，是非具體的行為，例如場上的企圖心，或是謙虛的態度，這些可以說是有形亦可說是無形，但是在優秀選手身上，你可能會發現他們有某些特質，而進而提升他們在場上的表現。
+        -   all_keywords: 優秀選手 優秀 模仿
+            index: 7
+            query_keywords: 優秀選手 優秀 模仿
+            title: 優秀選手之所以優秀，一定有某些特質與原因，雖然一昧的模仿也不一定是最好的方法，但是如果能夠在觀察的結果中統整歸納並找到適合自己的方式，模仿真的是一種快速的學習方式。
+    -   file: 26.html
+        pages:
+        -   all_keywords: 發球搶攻 變速突擊
+            index: 3
+            query_keywords: 發球搶攻 變速突擊
+            title: 發球搶攻等變速突擊的打法
+        -   all_keywords: 下壓結合搶網 進攻打法
+            index: 4
+            query_keywords: 進攻打法
+            title: 下壓結合搶網的進攻打法
+    -   file: 42.html
+        pages:
+        -   all_keywords: 決賽 板橋體育館例行賽 例行賽 臺北體育館賽程 WSBL
+            index: 5
+            query_keywords: 決賽
+            title: 本季WSBL經過一週休兵後，將於6月11日起展開最後四天例行賽，因國內新冠肺炎疫情趨緩，本會也配合政府相關政策，開放觀眾入場觀賽，6月11日至13日臺北體育館賽程與6月16日起板橋體育館例行賽及決賽將開放二樓座位區供觀眾自由入坐，進場時請遵守採實名制登記、測量額溫、酒精消毒等防疫措施，且須配戴口罩才可進入球場。
+        -   all_keywords: 媒體小農 電信
+            index: 6
+            query_keywords: 媒體小農 電信
+            title: '19:00台元VS電信 喜歡我們的文章嗎?
+
+                歡迎透過媒體小農給我們支持喔!'
+    -   file: 43.html
+        pages:
+        -   all_keywords: Broken Soldier》 電影
+            index: 5
+            query_keywords: Broken Soldier》 電影
+            title: 目前未知她的預產期為何時，但在拍完電影《Broken Soldier》後，她就未宣布下一部新作項目，看來正為待產好好做足準備。
+    -   file: 67.html
+        pages:
+        -   all_keywords: 鏟屎官 二哈 養二哈
+            index: 1
+            query_keywords: 鏟屎官 二哈 養二哈
+            title: 比如許多養二哈的鏟屎官，就總會懷疑，二哈這種汪在被創造時，是不是漏了點什麼……
+        -   all_keywords: 武藝 鏟屎官 毛病二 討食舉動
+            index: 2
+            query_keywords: 武藝 鏟屎官 毛病二 討食舉動
+            title: 相信不少鏟屎官都有此經歷：自家汪為了要到一點吃的，真可以說是使盡渾身解數，用盡十八般武藝，乞討的、賣萌的、裝可憐的應有盡有。
+        -   all_keywords: 記仇 狗狗 毛病三
+            index: 3
+            query_keywords: 記仇 狗狗 毛病三
+            title: 都說狗狗是熱心腸的大好汪，整天都在傻樂，但其實狗狗也是知道記仇的。
+        -   all_keywords: 小氣汪
+            index: 4
+            query_keywords: 小氣汪
+            title: 別看牠老是特別熱情，生起氣來也是會不理人的，而從能記仇這一點來看，就知道這種小氣汪其實也是很聰明瞭。
+        -   all_keywords: 鏟屎官可 狗狗
+            index: 5
+            query_keywords: 鏟屎官可
+            title: 所以鏟屎官可千萬不要覺得狗狗沒記性，不跟你生氣那是對你的溫柔哦~
+        -   all_keywords: 主人 毛病四 狗仗人勢
+            index: 6
+            query_keywords: 主人 毛病四 狗仗人勢
+            title: 在主人身邊總是特別凶悍，仗著主人能罩自己，總是一副天不怕地不怕，見汪就吵架的樣子，但是主人一離開，牠們立馬就慫！
+        -   all_keywords: 溺愛 愛吵架愛凶人 狗狗 鏟屎官們
+            index: 7
+            query_keywords: 溺愛 愛吵架愛凶人 狗狗 鏟屎官們
+            title: 當然，對於這種愛吵架愛凶人的狗狗，鏟屎官們可千萬不能太過溺愛哦，對不好的習慣要及時加以制止。
+        -   all_keywords: null
+            index: 8
+        -   all_keywords: 八公叔叔 鏟屎官 你家汪 微信公眾號 bagognshushu
+            index: 9
+            query_keywords: 八公叔叔 鏟屎官 你家汪 微信公眾號 bagognshushu
+            title: '鏟屎官，你認為你家汪有什麼聰明表現嗎？
+
+                本文獲微信公眾號 @八公叔叔 授權使用，微信號：bagognshushu'
+    -   file: 79.html
+        pages:
+        -   all_keywords: 大甲鎮瀾宮 彰化天后宮 大甲媽祖出巡 彰化市南瑤宮 西螺福興宮 清水朝興宮 新港奉天宮 北斗奠安宮
+            index: 1
+            query_keywords: 大甲鎮瀾宮 彰化天后宮 大甲媽祖出巡 彰化市南瑤宮 西螺福興宮 清水朝興宮 新港奉天宮 北斗奠安宮
+            title: 2020九天八夜的大甲媽祖出巡遶境 行經駐駕地點：有6/12 彰化市南瑤宮、6/13 西螺福興宮、6/14 新港奉天宮、返程
+                6/16 西螺福興宮、6/17 北斗奠安宮、6/18 彰化天后宮、6/19 清水朝興宮，6/20 回駕 大甲鎮瀾宮。
+    -   file: 88.html
+        pages:
+        -   all_keywords: 刷卡機報修通知 信用卡補刷 VIP 交易 員工 公司上層
+            index: 2
+            query_keywords: 刷卡機報修通知 信用卡補刷 VIP 交易 員工 公司上層
+            title: 當公司上層向她表示，根本沒接獲刷卡機報修通知，讓她氣得趕緊跑回店內，沒想到，卻看見剛剛那名員工正在用自己的信用卡補刷剛剛那一筆交易，更令人傻眼的是該店員還偷偷用店內VIP折扣，從中賺取差價。
+        -   all_keywords: 員工 飯碗
+            index: 5
+            query_keywords: 員工 飯碗
+            title: 千萬別貪一時的便宜而丟掉飯碗，不管任何職業的員工都應謹記在心~
+    -   file: 102.html
+        pages:
+        -   all_keywords: 薄荷油 涼涼 要膏 爸媽 寶貝擦 止癢膏 癢癢 寶貝 寶寶 樟腦油
+            index: 7
+            query_keywords: 薄荷油 涼涼 要膏 爸媽 寶貝擦 止癢膏 癢癢 寶貝 寶寶 樟腦油
+            title: 很多爸媽都會拿手邊涼涼的要膏給寶貝擦，因為涼涼的，癢癢的感覺會比較舒緩，寶貝比較不會去抓，但大人在用的薄荷油、止癢膏，不見得適合寶寶使用，因為這些東西常常會添加樟腦油、薄荷、尤加利油等成分，並不適合3歲以下的寶寶使用，用太多可能會影響到孩子的腦部發育喔！
+        -   all_keywords: 爸媽 防蚊 DEET」 產品 衛福部
+            index: 9
+            query_keywords: 爸媽 防蚊 DEET」 產品 衛福部
+            title: 爸媽一定要選經衛福部核准的產品，而我們常常看到的成分是「DEET」敵避，它可以有效防蚊，但要注意的是，濃度不能超過30%，而且2個月以下的小朋友不能使用，而且用的時候要避開臉部，也不要噴在傷口上。
+    -   file: 106.html
+        pages:
+        -   all_keywords: 南韓 撥打電話
+            index: 4
+            query_keywords: 南韓 撥打電話
+            title: 南韓下午將按時撥打電話，並密切關注有關情況。
+        -   all_keywords: 南韓電話 金正恩 北韓 執政勞動黨
+            index: 6
+            query_keywords: 南韓電話 金正恩 北韓 執政勞動黨
+            title: 雖然北韓今上午首次未接南韓電話，但根據北韓中央通信社消息指出，北韓領導人金正恩今出席執政勞動黨政治局會議，商討「國家進一步發展自給自足經濟和改善人民生活水準時所出現的重大議題」。
+    -   file: 107.html
+        pages:
+        -   all_keywords: 澳大利亞方面正視問題 澳中國公民
+            index: 5
+            query_keywords: 澳大利亞方面正視問題 澳中國公民
+            title: 我們也奉勸澳大利亞方面正視問題，採取切實措施維護和保障在澳中國公民的安全和權益。
+    -   file: 113.html
+        pages:
+        -   all_keywords: 麥可 工作服 清潔工 黑色上衣 舞蹈
+            index: 6
+            query_keywords: 麥可 工作服 清潔工 黑色上衣 舞蹈
+            title: 最後他把工作服也脫掉，只穿著一件黑色上衣，每一個舞蹈頓點都相當有力，結尾時他脫掉帽子，雙腳交叉做出了麥可生前表演到最後的動作，整段表演受到全場的盛讚，許多人甚至起立鼓掌，一開始清潔工是被小看的，但是只是因為「職業」，這影片也讓網友說「真的不能小看他人，每個人都很有潛力！」！。
+    -   file: 146.html
+        pages:
+        -   all_keywords: 馬來西亞檳城 檳城 島城夢華錄 華人青年
+            index: 3
+            query_keywords: 馬來西亞檳城 檳城 島城夢華錄 華人青年
+            title: 《島城夢華錄》是由一群來自馬來西亞檳城的華人青年所組成的團隊，他們試圖以影像留記錄檳城的文化。
+    -   file: 153.html
+        pages:
+        -   all_keywords: 遠見雜誌
+            index: 5
+            query_keywords: 遠見雜誌
+            title: 遠見雜誌：五成企業看淡下半年，共享辦公室卻一支獨秀？
+-   desc1: ============================================================
+    desc2: smartcrop焦點錯誤
+    desc3: ============================================================
+    files:
+    -   file: 11.html
+        pages:
+        - 3
+    -   file: 44.html
+        pages:
+        - 0
+        - 1
+    -   file: 49.html
+        pages:
+        - 1
+        - 2
+        - 5
+    -   file: 67.html
+        pages:
+        - 0
+        - 3
+    -   file: 73.html
+        pages:
+        - 17
+        - 18
+        - 19
+    -   file: 75.html
+        pages:
+        - 3
+        - 4
+        - 5
+    -   file: 89.html
+        pages:
+        - 0
+    -   file: 94.html
+        pages:
+        - 3
+    -   file: 118.html
+        pages:
+        - 0
+        - 10
+    -   file: 119.html
+        pages:
+        - 7
+    -   file: 128.html
+        pages:
+        - 3
+        - 10
+    -   file: 129.html
+        pages:
+        - 1
+        - 5
+        - 6
+    -   file: 139.html
+        pages:
+        - 1
+        - 2
+    -   file: 153.html
+        pages:
+        - 2
+    -   file: 157.html
+        pages:
+        - 0
+        - 1
+    -   file: 160.html
+        pages:
+        - 0
+        - 1
+    -   file: 161.html
+        pages:
+        - 1
+        - 2
+        - 3
+        - 4

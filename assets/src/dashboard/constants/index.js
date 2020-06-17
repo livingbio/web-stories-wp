@@ -45,6 +45,9 @@ export const APP_ROUTES = {
   EDITOR_SETTINGS: '/editor-settings',
   SUPPORT: '/support',
   STORY_ANIM_TOOL: '/story-anim-tool',
+
+  CREATE_STORY: '/create-story',
+  AI_STORY_QUEUE: '/ai-story-queue',
 };
 
 export const NESTED_APP_ROUTES = {
@@ -54,6 +57,10 @@ export const NESTED_APP_ROUTES = {
 
 export const primaryPaths = [
   { value: APP_ROUTES.MY_STORIES, label: __('My Stories', 'web-stories') },
+  {
+    value: APP_ROUTES.AI_STORY_QUEUE,
+    label: __('AI Story Queue', 'web-stories'),
+  },
   {
     value: APP_ROUTES.SAVED_TEMPLATES,
     label: __('Saved Templates', 'web-stories'),
