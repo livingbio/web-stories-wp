@@ -31,6 +31,12 @@ import {
   TableRow,
 } from '../../../../components';
 
+const FIELDS = {
+  id: 'id',
+  url: 'article url',
+  status: 'status',
+};
+
 const StyledListView = styled.div`
   width: 100%;
 `;
@@ -51,15 +57,15 @@ function ListView({ queues }) {
       <Table>
         <TableHeader>
           <TableRowHeader>
-            {Object.keys(queues[0]).map((key) => (
-              <TableCell key={`queue-${key}`}>{key}</TableCell>
+            {Object.keys(FIELDS).map((key) => (
+              <TableCell key={`queue-${key}`}>{FIELDS[key]}</TableCell>
             ))}
           </TableRowHeader>
         </TableHeader>
         <TableBody>
           {queues.map((queue, index) => (
             <StyledTableRow key={`queue-${index}`}>
-              {Object.keys(queue).map((key) => (
+              {Object.keys(FIELDS).map((key) => (
                 <TableCell key={`stor-${index}-${key}`}>{queue[key]}</TableCell>
               ))}
             </StyledTableRow>

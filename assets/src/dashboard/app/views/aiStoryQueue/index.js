@@ -43,11 +43,17 @@ import useQueueApi from './useQueueApi';
 function AIStroyQueue() {
   const { queues, api } = useQueueApi();
 
+  const filteredQueues = queues.filter(
+    (queue) => ['processing', 'error'].indexOf(queue.status) !== -1
+  );
+
   useEffect(() => {
     const timer = setInterval(() => {
       api.fetchQueues();
     }, 1000);
-    return () => clearInterval(timer);
+    return () => {
+      clearInterval(timer);
+    };
   }, [api]);
 
   return (
@@ -61,8 +67,8 @@ function AIStroyQueue() {
       </Layout.Squishable>
       <Layout.Scrollable>
         <StandardViewContentGutter>
-          {queues && queues.length > 0 ? (
-            <ListView queues={queues} />
+          {filteredQueues && filteredQueues.length > 0 ? (
+            <ListView queues={filteredQueues} />
           ) : (
             <EmptyView />
           )}

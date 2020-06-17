@@ -18,12 +18,11 @@
  * External dependencies
  */
 import { useReducer, useCallback, useMemo } from 'react';
+import axios from 'axios';
 
 /**
  * Internal dependencies
  */
-// import dataAdapter from '../../api/wpAdapter';
-import { queues } from './mock';
 
 const TYPES = {
   FETCH_QUEUES: 'fetchQueues',
@@ -43,14 +42,17 @@ function apiReducer(state, action) {
 function useQueueApi() {
   const [state, dispath] = useReducer(apiReducer, defaultState);
 
-  // const fetchQueues = useCallback(async () => {
-  const fetchQueues = useCallback(() => {
+  const fetchQueues = useCallback(async () => {
     try {
-      // const response = await dataAdapter.get();
+      // const response = queues;
+      const response = await axios({
+        method: 'GET',
+        url: `http://172.16.6.233:8001/api/stories/?cb=${Date.now()}`,
+      });
 
       dispath({
         type: TYPES.FETCH_QUEUES,
-        payload: queues,
+        payload: response.data.payload,
       });
     } catch (error) {
       // eslint-disable-next-line no-console

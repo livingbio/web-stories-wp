@@ -18,6 +18,7 @@
  * External dependencies
  */
 import { useReducer, useCallback, useMemo } from 'react';
+import axios from 'axios';
 /**
  * WordPress dependencies
  */
@@ -46,24 +47,22 @@ function apiReducer(state, action) {
 function useCreateApi() {
   const [state, dispath] = useReducer(apiReducer, defaultState);
 
-  // eslint-disable-next-line require-await
   const createStory = useCallback(async ({ articleURL, templateId }) => {
-    // eslint-disable-next-line no-console
-    console.log('createStory -> articleURL', articleURL, templateId);
     try {
-      // const response = await apiFetch({
-      //   url: 'https://reqres.in/api/users',
-      //   method: 'POST',
-      //   data: {
-      //     name: 'morpheus',
-      //     job: 'leader',
-      //   },
-      // });
-      // console.log('createStory -> response', response);
+      const response = await axios({
+        url: 'http://172.16.6.233:8001/api/url-to-story/',
+        method: 'POST',
+        data: {
+          article_url: articleURL,
+          extra: JSON.stringify({
+            template_id: templateId,
+          }),
+        },
+      });
 
       dispath({
         type: TYPES.CREATE_STORY,
-        payload: 'OK',
+        payload: response.data,
       });
     } catch (error) {
       // eslint-disable-next-line no-console

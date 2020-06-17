@@ -17,7 +17,7 @@
  * External dependencies
  */
 import { isUri as isValidUrl } from 'valid-url';
-import { useState, useCallback, useEffect } from 'react';
+import { useState, useCallback } from 'react';
 /**
  * Internal dependencies
  */
@@ -29,8 +29,21 @@ import TemplateView from './templateView';
 function CreateStory() {
   const [view, setView] = useState(VIEW_INDEX);
   const [articleURL, setArticleURL] = useState('');
-  const [template, setTemplate] = useState();
-  const { state: apiState, api } = useCreateApi();
+  const { api } = useCreateApi();
+
+  const createStory = useCallback(
+    // eslint-disable-next-line no-shadow
+    async ({ articleURL, templateId }) => {
+      if (articleURL && templateId) {
+        await api.createStory({
+          articleURL,
+          templateId,
+        });
+        location.hash = '#/ai-story-queue';
+      }
+    },
+    [api]
+  );
 
   const onArticleURLUpdate = useCallback((value) => {
     setArticleURL(value);
@@ -40,26 +53,20 @@ function CreateStory() {
     }
   }, []);
 
-  const onTemplateSelect = (payload) => {
-    setTemplate(payload);
-  };
+  const onTemplateSelect = useCallback(
+    (payload) => {
+      setView(VIEW_INDEX);
+      createStory({
+        articleURL,
+        templateId: payload.id,
+      });
+    },
+    [createStory, articleURL]
+  );
 
   const onTemplateCancel = () => {
     setView(VIEW_INDEX);
   };
-
-  useEffect(() => {
-    async function createStory() {
-      await api.createStory({
-        articleURL,
-        templateId: template.id,
-      });
-    }
-
-    if (articleURL && template) {
-      createStory();
-    }
-  }, [articleURL, template, api, apiState]);
 
   return (
     <>
