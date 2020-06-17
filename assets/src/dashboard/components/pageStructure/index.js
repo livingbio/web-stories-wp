@@ -100,7 +100,7 @@ export const LeftRailContainer = styled.nav.attrs({
 
 export function LeftRail() {
   const { state } = useRouteHistory();
-  const { newStoryURL, version } = useConfig();
+  const { version } = useConfig();
   const leftRailRef = useRef(null);
   const upperContentRef = useRef(null);
   const enableInProgressViews = useFeature('enableInProgressViews');
@@ -167,7 +167,12 @@ export function LeftRail() {
           </WebStoriesHeading>
         </Content>
         <Content>
-          <NavButton type={BUTTON_TYPES.CTA} href={newStoryURL} isLink>
+          {/* <NavButton type={BUTTON_TYPES.CTA} href={newStoryURL} isLink> */}
+          <NavButton
+            type={BUTTON_TYPES.CTA}
+            href={resolveRoute('/create-story')}
+            isLink
+          >
             {__('Create New Story', 'web-stories')}
           </NavButton>
         </Content>

@@ -30,6 +30,7 @@
     "@wordpress/element": "^2.13.1",
     "@wordpress/i18n": "^3.13.0",
     "@wordpress/icons": "^2.2.0",
+    "axios": "^0.19.2",
     "big.js": "^5.2.2",
     "classnames": "^2.2.6",
     "colorthief": "^2.3.0",
